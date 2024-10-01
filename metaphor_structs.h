@@ -18,3 +18,9 @@ typedef struct
     bool Louis : 1 <name = "Equippable by Louis">;
     u16 RESERVE<format=hex>;
 } EquippableUsers <name = "Equippable User(s)">;
+
+typedef struct
+{
+  f32 X;
+  f32 Y;
+} Vec2<read=Str("%f - %f", X, Y)>;

@@ -1,0 +1,38 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+typedef struct
+{
+  Vec2 TopLeft;
+  Vec2 BottomLeft;
+  Vec2 TopRight;
+  Vec2 BottomRight;
+} UVBlock;
+
+typedef struct
+{
+  SetRandomBackColor();
+  
+  UVBlock UVData;
+  string imageName;
+} UVMap <optimize=false, read=Str( "%s", imageName )>;
+
+typedef struct
+{
+  uint Field00;
+  uint NumberOfEntries;
+  uint Pointers[ NumberOfEntries ];
+
+local int i;
+
+  for (i = 0; i < NumberOfEntries; i++)
+  {
+    FSeek(Pointers[i] + 8 + 4 * NumberOfEntries);
+    UVMap Entry;
+  }
+} Bin <optimize=false>;
+
+Bin bin;

@@ -1,0 +1,34 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+typedef struct
+{
+  SetRandomBackColor();
+  
+  u16 Field00;
+  u16 Field02;
+  u32 char_id;
+  u16 Field06;
+  u16 Field08;
+  u16 Field0A;
+  u16 Field0E;
+  u32 Field10;
+  u32 Field14;
+  u32 Field18;
+  u32 Field1C;
+  u32 Field20;
+  u32 Field24;
+  u32 Field28;
+  u32 Field2C;
+  u32 Field30;
+} Allied <optimize=false, read=Str( "%02d %02d %04d", Field00, Field02, char_id )>; // size=0x34, 
+
+typedef struct
+{
+  Allied entries[ FileSize() / 0x34 ];
+} Bin <optimize=false>;
+
+Bin bin;

@@ -1,0 +1,27 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+typedef struct
+{
+  SetRandomBackColor();
+  
+  Vec2 TopLeft;
+  Vec2 BottomLeft;
+  Vec2 TopRight;
+  Vec2 BottomRight;
+} UVMap <optimize=false>;
+
+typedef struct
+{
+  UVMap BasePosition;
+  UVMap EyePosition;
+  UVMap MouthPosition;
+  UVMap Position4;
+  UVMap Position5;
+  UVMap Position6;
+} Bin <optimize=false>;
+
+Bin bin;
