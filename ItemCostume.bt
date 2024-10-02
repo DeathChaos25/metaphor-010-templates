@@ -13,8 +13,8 @@ typedef struct
   u16 Rarity;
   u16 CostumeId;
   byte MsgHash[0x20];
-  ItemCostume unk10;
-} Costume <optimize=false, read=Str( "%02d %02d %03d - %s ", Field00, Field08, model_id, GetEquippableUser(Field04) )>;
+  u16 unk10;
+} ItemCostume <optimize=false, read=Str( "%02d %02d %03d - %s ", Field00, Field08, model_id, GetEquippableUser(Field04) )>;
 
 typedef struct
 {
