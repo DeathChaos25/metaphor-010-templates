@@ -12,7 +12,8 @@ typedef struct
   u16 Field3;
   u16 Rarity;
   u16 model_id;
-  byte MsgHash[0x20];
+  byte MsgHash1[0x10];
+  byte MsgHash2[0x10];
   u16 unk10;
 } ItemCostume <optimize=false, read=Str( "%04d - %s ", model_id, GetEquippableUser(Users) )>;
 
