@@ -7,22 +7,14 @@
 typedef struct
 {
   SetRandomBackColor();
-  
-  u32 Field00;
-  EquippableUsers Field04;
-  u16 Field06;
-  u16 Field08;
-  u16 model_id;
-  u16 Field0E;
-  u32 Field10;
-  u32 Field14;
-  u32 Field18;
-  u32 Field1C;
-  u32 Field20;
-  u32 Field24;
-  u32 Field28;
-  u32 Field2C;
-} ItemCostume <optimize=false, read=Str( "%02d %02d %03d - %s ", Field00, Field08, model_id, GetEquippableUser(Field04) )>;
+  u32 Icon;
+  EquippableUsers Users;
+  u16 Field3;
+  u16 Rarity;
+  u16 CostumeId;
+  byte MsgHash[0x20];
+  ItemCostume unk10;
+} Costume <optimize=false, read=Str( "%02d %02d %03d - %s ", Field00, Field08, model_id, GetEquippableUser(Field04) )>;
 
 typedef struct
 {
