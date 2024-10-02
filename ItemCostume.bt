@@ -11,10 +11,10 @@ typedef struct
   EquippableUsers Users;
   u16 Field3;
   u16 Rarity;
-  u16 CostumeId;
+  u16 model_id;
   byte MsgHash[0x20];
   u16 unk10;
-} ItemCostume <optimize=false, read=Str( "%02d %02d %03d - %s ", Field00, Field08, model_id, GetEquippableUser(Field04) )>;
+} ItemCostume <optimize=false, read=Str( "%04d - %s ", model_id, GetEquippableUser(Users) )>;
 
 typedef struct
 {
