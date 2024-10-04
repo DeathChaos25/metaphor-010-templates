@@ -9,7 +9,7 @@ typedef struct
   SetRandomBackColor();
   u32 Icon;
   EquippableUsers Users;
-  u16 Field3;
+  u16 Field0C;
   u16 Rarity;
   u16 model_id;
   byte MsgHash1[0x10];
