@@ -1,0 +1,22 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+typedef struct
+{
+  SetRandomBackColor();
+  
+    SkillElement element;
+    PassiveOrActive field01;
+    byte MsgHash1[0x10];
+    byte MsgHash2[0x10];
+} SkillTBL <optimize=false, read=Str( "%s element - %s skill type", EnumToString(element), EnumToString(field01) )>; // size=0x22, 
+
+typedef struct
+{
+  SkillTBL entries[ FileSize() / 0x22 ];
+} Bin <optimize=false>;
+
+Bin bin;

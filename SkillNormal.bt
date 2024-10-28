@@ -1,0 +1,52 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+typedef struct
+{
+  SetRandomBackColor();
+  
+  u16 Field00;
+  SkillUseConditions Usable_In;
+  PhysOrMagType Phys_Or_Mag;
+  u8 Range;
+  CostTypeEnum Cost_Type<name="Cost Type">;
+  u16 HP_Percent_Cost<name="% HP Cost">;
+  u16 MP_Cost<name="MP Cost">;
+  u16 Field0A;
+  TargetCount Target_Count<name="Target Count">;
+  TargetSide Target_Side<name="Target Side">;
+  TargetCondition Target_Condition<name="Target Condition">;
+  u8 Field0F;
+  u8 Field10;
+  u8 Field11;
+  u8 Field12;
+  u8 Field13;
+  u8 Accuracy;
+  u8 Min_Hit_Count;
+  u8 Max_Hit_Count;
+  u8 HP_Damage_Type;
+  u16 SkillPower;
+  u8 MP_Damage_Type;
+  u8 Field1A;
+  u8 Field1B;
+  u8 Field1C;
+  ApplyOrCure Apply_Cure;
+  u8 ProbabilityApplyCure<name="% of Chance to Apply/Cure">;
+  u32 Ailments;
+  u16 Field24;
+  u16 Field26;
+  u16 Field28;
+  u16 Field2A;
+  u16 Field2C;
+  u16 Field2E;
+} SkillNormalTBL <optimize=false, read=Str( "%02d %04d", MP_Cost, Accuracy )>; // size=0x30, 
+
+typedef struct
+{
+  SkillNormalTBL entries[ FileSize() / 0x30 ];
+} Bin <optimize=false>;
+
+Bin bin;
