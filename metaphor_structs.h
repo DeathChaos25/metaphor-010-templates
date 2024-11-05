@@ -2,6 +2,36 @@ LittleEndian();
 
 typedef struct
 {
+    u8 Strength;
+    u8 Magic;
+    u8 Endurance;
+    u8 Agility;
+    u8 Luck;
+    u8 Stat_RESERVE;
+} Unit_Stats;
+
+typedef struct
+{
+    bool bit01 : 1;
+    bool bit02 : 1;
+    bool bit03 : 1;
+    bool bit04 : 1;
+    bool bit05 : 1;
+    bool bit06 : 1;
+    bool bit07 : 1;
+    bool bit08 : 1;
+    bool bit09 : 1;
+    bool bit10 : 1;
+    bool bit11 : 1;
+    bool bit12 : 1;
+    bool bit13 : 1;
+    bool bit14 : 1;
+    bool bit15 : 1;
+    bool bit16 : 1;
+} EnemyTBLUnitFlags;
+
+typedef struct
+{
     bool UseMenu : 1 <name = "Usable Outside of Battle">;
     bool UseBattle : 1 <name = "Usable in Battle">;
     bool bit3 : 1;
@@ -56,6 +86,15 @@ enum <byte> SkillElement
     Dark,
     Almighty
 };
+
+typedef struct
+{
+    SkillElement AttackAttribute;
+    u8 Accuracy;
+    u16 Attack;
+    u16 Defense;
+    u16 Evasion;
+} EnemyAtkProperty;
 
 enum <byte> ApplyOrCure
 {

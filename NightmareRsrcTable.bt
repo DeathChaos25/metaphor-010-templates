@@ -1,0 +1,118 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef char bool;
+typedef char s8;
+typedef uchar u8;
+typedef int16 s16;
+typedef uint16 u16;
+typedef int16 s16;
+typedef int32 s32;
+typedef uint32 u32;
+typedef int64 s64;
+typedef uint64 u64;
+typedef hfloat f16;
+typedef float f32;
+typedef double f64;
+
+typedef struct{
+    u16 MajorID;
+    u16 MinorID;
+    u16 SubID;
+    u16 SubID2;
+    u16 Flag5;
+    u16 Flag6;
+    u16 Flag7;
+    u16 Flag8;
+    
+} Entry <optimize=false, read=Str( "Major ID: %d, Minor ID: %d, Sub ID: %d, Sub ID 2: %d", MajorID, MinorID, SubID, SubID2)>;
+
+typedef struct{
+    u16 TableID;
+    u16 Flag;
+} Header<optimize=false, name=Str( "Table %d", TableID ), hidden=true>;
+
+typedef struct {
+    Header TableHeader0;
+    Header TableHeader1;
+    Entry PlayerBattle[76];
+    Header TableHeader2;
+    Entry PlayerField[952];
+    Header TableHeader3;
+    Header TableHeader4;
+    Header TableHeader5;
+    Entry PlayerEvent[952];
+    Header TableHeader6;
+    Entry Enemy[251];
+    Header TableHeader7;
+    Header TableHeader8;
+    Header TableHeader9;
+    Header TableHeader10;
+    Entry FieldEffect[605];
+    Header TableHeader11;
+    Header TableHeader12;
+    Entry FieldLayout[1504];
+    Header TableHeader13;
+    Header TableHeader14;
+    Entry FieldObjects[5097];
+    Header TableHeader15;
+    Entry ENV[1996];
+    Header TableHeader16;
+    Entry Weapons[102];
+    Header TableHeader17;
+    Entry Items[417];
+    Header TableHeader18;
+    Header TableHeader19;
+    Header TableHeader20;
+    Header TableHeader21;
+    Entry AreaENV[170];
+    Header TableHeader22;
+    Header TableHeader23;
+    Header TableHeader24;
+    Header TableHeader25;
+    Header TableHeader26;
+    Header TableHeader27;
+    Header TableHeader28;
+    Header TableHeader29;
+    Header TableHeader30;
+    Header TableHeader31;
+    Header TableHeader32;
+    Entry Vehicle[38];
+    Header TableHeader33;
+    Entry Archetype[46];
+    Header TableHeader34;
+    Entry NPC[255];
+    Header TableHeader35;
+    Entry entry35[95];
+    Header TableHeader36;
+    Header TableHeader37;
+    Entry entry37[6];
+    Header TableHeader38;
+    Header TableHeader39;
+    Entry entry39[8];
+    Header TableHeader40;
+    Entry entry40[3];
+    Header TableHeader41;
+    Header TableHeader42;
+    Entry entry42[6];
+    Header TableHeader43;
+    Entry Weapons2[102];
+    Header TableHeader44;
+    Entry Weapons3[102];
+    Header TableHeader45;
+    Entry Items2[417];
+    Header TableHeader46;
+    Entry Items3[417];
+    Header TableHeader47;
+} File <optimize=false>;
+File file;
