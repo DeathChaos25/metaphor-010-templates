@@ -1,0 +1,23 @@
+//---------------------------------------------
+// common/init/data/EnemyID.bin
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+typedef struct
+{
+  SetRandomBackColor();
+  byte NameHash[0x10];
+  s16 ID;
+} EnemyID <optimize=false, read=Str( "%04d", ID )>;
+
+typedef struct
+{
+  SetRandomBackColor();
+  u64 Magic;
+  u32 entry_count;
+  u32 RESERVE;
+  EnemyID entries[ entry_count ];
+} Bin <optimize=false>;
+
+Bin bin;
