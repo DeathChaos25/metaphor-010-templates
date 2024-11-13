@@ -1,0 +1,167 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+typedef char bool;
+typedef char s8;
+typedef uchar u8;
+typedef int16 s16;
+typedef uint16 u16;
+typedef int16 s16;
+typedef int32 s32;
+typedef uint32 u32;
+typedef int64 s64;
+typedef uint64 u64;
+typedef hfloat f16;
+typedef float f32;
+typedef double f64;
+
+
+typedef struct{
+    u64 Field00;
+    u64 EntryNum;
+    u64 FieldNum;
+    u64 EntrySize;
+} FileHeader <optimize=false>;
+
+typedef struct{
+    s16 AttackHitRegFrames [ 8 ];
+    s16 AttackAnimationSpeed;
+    s16 AttackCollisionRadius;
+    s16 UnknownAttack1;
+    s16 UnknownAttack2;
+    s16 SkillHitRegFrames [ 8 ];
+    s16 SkillAnimationSpeed;
+    s16 SkillCollisionRadius;
+    s16 UnknownSkill1;
+    s16 UnknownSkill2;
+    s16 UnknownHitRegFrames [ 8 ];
+    s16 UnknownAnimationSpeed;
+    s16 UnknownCollisionRadius;
+    s16 UnknownUnknown1;
+    s16 UnknownUnknown2;
+    s16 Unknown2HitRegFrames [ 8 ];
+    s16 Unknown2AnimationSpeed;
+    s16 Unknown2CollisionRadius;
+    s16 Unknown2Unknown1;
+    s16 Unknown2Unknown2;
+    s16 Unknown3HitRegFrames [ 8 ];
+    s16 Unknown3AnimationSpeed;
+    s16 Unknown3CollisionRadius;
+    s16 Unknown3Unknown1;
+    s16 Unknown3Unknown2;
+} AttackFrameData <optimize=false>;
+
+typedef struct{
+    f32 Normal_OffsetX;
+    f32 Normal_OffsetY;
+    f32 Normal_OffsetZ;
+    f32 Normal_Height;
+    f32 Normal_Radius;
+    f32 Dying_OffsetX;
+    f32 Dying_OffsetY;
+    f32 Dying_OffsetZ;
+    f32 Dying_Height;
+    f32 Dying_Radius;
+    f32 Field28;
+    f32 Field2C;
+    f32 Field30;
+    f32 Field34;
+    f32 Field38;
+    f32 Field3C;
+    f32 Field40;
+    f32 Field44;
+    f32 Field48;
+    f32 Field4C;
+    f32 Field50;
+    f32 Field54;
+    f32 Field58;
+    f32 Field5C;
+    f32 Field60;
+    f32 Field64;
+    f32 Field68;
+    f32 Field6C;
+    f32 Field70;
+    f32 Field74;
+    f32 Field78;
+    f32 Field7C;
+    f32 Field80;
+    f32 Field84;
+    f32 Field88;
+    f32 Field8C;
+    f32 Field90;
+    f32 Field94;
+    f32 Field98;
+    f32 Field9C;
+    f32 FieldA0;
+    f32 FieldA4;
+    f32 FieldA8;
+    f32 FieldAC;
+    f32 FieldB0;
+    f32 FieldB4;
+    f32 FieldB8;
+    f32 FieldBC;
+    f32 FieldC0;
+    f32 FieldC4;
+    f32 FieldC8;
+    f32 FieldCC;
+    f32 FieldD0;
+    f32 FieldD4;
+    f32 FieldD8;
+    f32 FieldDC;
+    f32 FieldE0;
+    f32 FieldE4;
+    f32 FieldE8;
+    f32 FieldEC;
+    f32 FieldF0;
+    f32 FieldF4;
+    f32 FieldF8;
+    f32 FieldFC;
+    f32 Field100;
+    s16 ModelScale;
+    s16 AilmentScale;
+    s16 EffectScale;
+    bool Walk;
+    f32 WalkSpeed;
+    bool Dash;
+    f32 DashSpeed;
+    AttackFrameData attackFrameData;
+} Entry <optimize=false>;
+
+typedef struct{
+    Entry entry[60];
+} PlayerSection <optimize=false>;
+
+
+typedef struct {
+    FileHeader header;
+    FSeek(FTell() + (header.FieldNum * 8));
+    Entry Protagonist;
+    Entry Strohl;
+    Entry Hulkenberg;
+    Entry Heismay;
+    Entry Junah;
+    Entry Eupha;
+    Entry PC07;
+    Entry Basilio;
+    Entry PC09;
+    Entry Grius;
+    Entry PC11;
+    Entry PC12;
+    Entry PC13;
+    Entry PC14;
+    Entry PC15;
+    Entry PC16;
+    Entry PC17;
+    Entry PC18;
+    Entry PC19;
+} File <optimize=false>;
+File file;

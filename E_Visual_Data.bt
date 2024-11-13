@@ -1,0 +1,97 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+typedef char bool;
+typedef char s8;
+typedef uchar u8;
+typedef int16 s16;
+typedef uint16 u16;
+typedef int16 s16;
+typedef int32 s32;
+typedef uint32 u32;
+typedef int64 s64;
+typedef uint64 u64;
+typedef hfloat f16;
+typedef float f32;
+typedef double f64;
+
+
+typedef struct{
+    u64 Field00;
+    u64 EntryNum;
+    u64 FieldNum;
+    u64 EntrySize;
+} FileHeader <optimize=false>;
+
+
+typedef struct{
+    s16 AttackHitRegFrames [ 8 ];
+    s16 AttackAnimationSpeed;
+    s16 AttackCollisionRadius;
+    s16 UnknownAttack1;
+    s16 UnknownAttack2;
+    s16 SkillHitRegFrames [ 8 ];
+    s16 SkillAnimationSpeed;
+    s16 SkillCollisionRadius;
+    s16 UnknownSkill1;
+    s16 UnknownSkill2;
+    s16 UnknownHitRegFrames [ 8 ];
+    s16 UnknownAnimationSpeed;
+    s16 UnknownCollisionRadius;
+    s16 UnknownUnknown1;
+    s16 UnknownUnknown2;
+} AttackFrameData <optimize=false>;
+
+typedef struct{
+    f32 Field00;
+    f32 Normal_OffsetX;
+    f32 Normal_OffsetY;
+    f32 Normal_OffsetZ;
+    f32 Normal_Height;
+    f32 Normal_Radius;
+    f32 Dying_OffsetX;
+    f32 Dying_OffsetY;
+    f32 Dying_OffsetZ;
+    f32 Dying_Height;
+    f32 Dying_Radius;
+    f32 Down_OffsetX;
+    f32 Down_OffsetY;
+    f32 Down_OffsetZ;
+    f32 Down_Height;
+    f32 Down_Radius;
+    f32 Skill1_OffsetX;
+    f32 Skill1_OffsetY;
+    f32 Skill1_OffsetZ;
+    f32 Skill1_Height;
+    f32 Skill1_Radius;
+    f32 Skill2_OffsetX;
+    f32 Skill2_OffsetY;
+    f32 Skill2_OffsetZ;
+    f32 Skill2_Height;
+    f32 Skill2_Radius;
+    s16 ModelScale;
+    s16 AilmentScale;
+    s16 EffectScale;
+    bool Walk;
+    f32 WalkSpeed;
+    bool Dash;
+    f32 DashSpeed;
+    AttackFrameData attackFrameData;
+} Entry <optimize=false>;
+
+
+typedef struct {
+    FileHeader header;
+    FSeek(FTell() + (header.FieldNum * 8));
+    Entry entry[header.EntryNum];
+} File <optimize=false>;
+File file;

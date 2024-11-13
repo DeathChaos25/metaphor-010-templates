@@ -4,6 +4,15 @@
 #include "common/include.h"
 #include "metaphor_structs.h"
 
+typedef struct
+{
+    u8 AttackAttribute;
+    u8 Accuracy;
+    u16 Attack;
+    u16 Defense;
+    u16 Evasion;
+} EnemyAtkProperty;
+
 typedef struct{
     SetRandomBackColor();
 

@@ -89,6 +89,20 @@ enum <byte> SkillElement
 
 typedef struct
 {
+    u8 Multiplier <name = "Multiplier (in increments of 5%)", comment = "Multiplies damage & ailment chance. 20 is Neutral since 20 x 5% = 100% of normal dmg & ail. chance. 80 x 5% = 400% = 4x multiplier. 0 is ignored (does not nullify attack).">;
+    u8 Block : 1;
+    u8 Repel : 1;
+    u8 Drain : 1;
+    u8 Weak : 1 ;
+    u8 Resist : 1 <comment = "Displays Resist text and halves damage (by default) when hit. (However, If Multiplier field is specified (non-zero), it replaces the default 0.5x multiplier.)">;
+    u8 Ailment_Immune : 1 <name = "Ailment Immune", comment = "Incoming attacks never inflict ailments (including insta-kill). Overrides Guarantee Ailment. Does NOT prevent Critical hits.">;
+    u8 Guarantee_Ailment : 1 <name = "Guarantee Ailment", comment = "Incoming attacks with an ailment chance always inflict the ailment.">;
+    u8 Double_Ailment_Chance : 1 <name = "Double Ailment Chance", comment = "Used on Fire/Ice/Elec affinity to double the chance that an incoming attack inflicts the corresponding ailment (Burn/Freeze/Shock).">;
+} AffinityBitfield <read=Str( "Damage Taken: %03d", Multiplier * 5 )>;
+
+
+typedef struct
+{
     SkillElement AttackAttribute;
     u8 Accuracy;
     u16 Attack;

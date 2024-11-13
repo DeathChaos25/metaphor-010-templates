@@ -1,0 +1,106 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+typedef char bool;
+typedef char s8;
+typedef uchar u8;
+typedef int16 s16;
+typedef uint16 u16;
+typedef int16 s16;
+typedef int32 s32;
+typedef uint32 u32;
+typedef int64 s64;
+typedef uint64 u64;
+typedef hfloat f16;
+typedef float f32;
+typedef double f64;
+
+typedef struct{
+    s16 Field00;
+    s16 Field02;
+    s16 Field04;
+    s16 Field06;
+    s16 Field08;
+    s16 Field0A;
+    s16 Field0C;
+    s16 Field0E;
+    s16 Field10;
+    s16 Field12;
+    s16 Field14;
+    s16 Field16;
+    u32 Field18;
+    u32 Field1C;
+    u32 Field20;
+    u32 Field24;
+    u32 Field28;
+    s16 Field2A;
+    s16 Field2C;
+    s16 Field2E;
+    s16 Field30;
+    s16 Field32;
+    s16 Field34;
+    s16 Field36;
+    s16 Field38;
+    s16 Field3A;
+    s16 Field3C;
+    s16 Field3E;
+} Table2 <optimize=false>;
+
+typedef struct{
+    u16 Field00<hidden=true>;
+    u16 Field02<hidden=true>;
+    local u32 curAdd = FTell();
+    FSeek(Field00 + 0x9C94);
+    if (Field02 == 2){
+        s16 Value;    
+    }
+    else {
+        s32 Value;
+    }
+    FSeek(curAdd);
+} Table1Section <optimize=false, read=Str("%d", Value)>;
+
+
+typedef struct{
+    Table1Section MajorID;
+    Table1Section MinorID;
+    Table1Section Section03;
+    Table1Section Section04;
+    Table1Section Section05;
+    Table1Section Section06;
+    Table1Section Section07;
+    Table1Section Section08;
+    Table1Section Section09;
+    Table1Section Section10;
+    Table1Section Section11;
+    Table1Section Section12;
+    Table1Section Section13;
+    Table1Section Section14;
+    Table1Section Section15;
+    Table1Section Section16;
+    Table1Section Section17;
+    Table1Section Section18;
+    Table1Section Section19;
+    Table1Section Section20;
+} Table1 <optimize=false, read=Str("%d_%d", MajorID.Value, MinorID.Value)>;
+
+typedef struct{
+    u32 unk;
+} FileHeader <optimize=false>;
+
+
+typedef struct {
+    FileHeader header;
+    Table1 Table1_entry[501];
+    //Table2 Table2_entry[501];
+} File <optimize=false>;
+File file;

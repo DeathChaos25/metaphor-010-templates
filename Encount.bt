@@ -11,11 +11,11 @@ typedef struct
   u32 Flags<format=hex>;
   u32 Field04;
   u16 EnemyID[6];
-  u16 fld_major;
-  u16 fld_minor;
+  s16 fld_major;
+  s16 fld_minor;
   u16 bgm_cue_id;
   u16 Field1A;
-} Encount <optimize=false, read=Str( "0x%08X %03d_%03d", Flags, fld_major, fld_minor )>; // size=0x1C, 
+} Encount <optimize=false, read=Str( "0x%08X %03d_%03d -> %04d", Flags, fld_major, fld_minor, bgm_cue_id )>; // size=0x1C, 
 
 typedef struct
 {
