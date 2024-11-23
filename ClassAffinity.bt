@@ -1,0 +1,37 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+typedef struct
+{
+  SetRandomBackColor();
+  
+  AffinityBitfield Slash<name="Slash">;
+  AffinityBitfield Pierce<name="Pierce">;
+  AffinityBitfield Strike<name="Strike">;
+  AffinityBitfield Fire<name="Fire">;
+  AffinityBitfield Ice<name="Ice">;
+  AffinityBitfield Electric<name="Electric">;
+  AffinityBitfield Wind<name="Wind">;
+  AffinityBitfield Light<name="Light">;
+  AffinityBitfield Dark<name="Dark">;
+  AffinityBitfield Almighty<name="Almighty">;
+  AffinityBitfield Poison<name="Poison">;
+  AffinityBitfield Malady<name="Malady">;
+  AffinityBitfield Paralysis<name="Paralysis">;
+  AffinityBitfield Charm<name="Charm">;
+  AffinityBitfield Daze<name="Daze">;
+  AffinityBitfield Forget<name="Forget">;
+  AffinityBitfield Sleep<name="Sleep">;
+  AffinityBitfield Rage<name="Rage">;
+  AffinityBitfield Anxiety<name="Anxiety">;
+} ClassAffinity <optimize=true>;
+
+typedef struct
+{
+  ClassAffinity entries[ FileSize() / 0x26 ];
+} Bin <optimize=false>;
+
+Bin bin;
