@@ -1,0 +1,24 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+
+typedef struct
+{
+  SetRandomBackColor();
+  u16 SkillSynthesis <name="Skill Synthesis">;
+  u16 ArchetypeClass <name="Archetype Usable", comment = "The Archetype that can use this synthesis skill.">;
+  u16 RequiredSkill <name="Required Skill", comment = "The required skill will be changed but not the description. It needs to be manually edited.">;
+  u16 unknown3;
+  byte MsgHash1[0x58];
+} Synthesis <size=0x60, optimize=false>;
+
+SetBackColor( 0x880000 );
+
+local uint i = 0;
+for ( i = 0; i < ( FileSize() ) / 0x60; i++ )
+{
+  Synthesis Synthesisskill;
+}

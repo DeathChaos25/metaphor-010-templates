@@ -1,0 +1,49 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+
+typedef struct
+{
+  SetRandomBackColor();
+  u32 Icon <name="Icon">;
+  u16 unknown;
+  u16 unknown1;
+  u32 BuyingPrice <name="Buying Price">;
+  u32 SellingPrice <name="Selling Price">;
+  byte MsgHash1[0x10];
+  byte MsgHash2[0x10];
+  byte MsgHash3[0x10];
+} ItemEvent <size=0x40, optimize=false>;
+
+SetBackColor( 0x880000 );
+
+typedef struct
+{
+  u16 entry_count;
+  ItemEvent entries[ entry_count ];
+} Bin <optimize=false>;
+
+string GetEquippableUser( EquippableUsers& value )
+{
+    if ( value.Protagonist ) return "Protagonist";
+    else if ( value.Strohl ) return "Strohl";
+    else if ( value.Hulkenberg ) return "Hulkenberg";
+    else if ( value.Heismay ) return "Heismay";
+    else if ( value.Junah ) return "Junah";
+    else if ( value.Eupha ) return "Eupha";
+    else if ( value.Fidelio ) return "Fidelio";
+    else if ( value.Basilio ) return "Basilio";
+    else if ( value.Prince ) return "Prince";
+    else if ( value.Grius ) return "Grius";
+    else if ( value.Gallica ) return "Gallica";
+    else if ( value.PX ) return "PX";
+    else if ( value.Neuras ) return "Neuras";
+    else if ( value.Rella ) return "Rella";
+    else if ( value.Louis ) return "Louis";
+    else return "None";
+}
+
+Bin bin;

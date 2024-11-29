@@ -1,0 +1,91 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+
+typedef struct
+{
+  SetRandomBackColor();
+  u32 Icon <name="Icon">;
+  EquippableUsers Users;
+  u16 unknown;
+  u16 unknown1;
+  u16 unknown2;
+  u16 ElementalAttack <name="Elemental Attack">;
+  u16 ATK <name="ATK Power">;
+  u16 HIT <name="Hit Rate">;
+  u8 Strength;
+  u8 Magic;
+  u8 Endurance;
+  u8 Agility;
+  u8 Luck;
+  u8 unknown3;
+  u16 PassiveSKillID <name = "Passive Skill ID Usage", comment = "Passive Skill will be changed in battle but not the description. You have to manually edit in MSG">;
+  u16 unknown4;
+  u16 unknown5;
+  u32 BuyingPrice <name="Buying Price">;
+  u32 SellingPrice <name="Selling Price">;
+  u16 unknown6;
+  u16 unknown7;
+  u16 unknown8;
+  u16 unknown9;
+  u16 unknown10;
+  u16 unknown11;
+  u16 unknown12;
+  u16 unknown13;
+  u16 unknown14;
+  u16 unknown15;
+  u16 unknown16;
+  u16 unknown17;
+  u16 unknown18;
+  u16 unknown19;
+  u16 unknown20;
+  u16 unknown21;
+  u16 unknown22;
+  u16 unknown23;
+  u16 unknown24;
+  u16 unknown25;
+  u16 unknown26;
+  u16 unknown27;
+  u16 unknown28;
+  u16 unknown29;
+  u16 unknown30;
+  u16 unknown31;
+  u16 Rarity <name="Rarity">;
+  byte MsgHash1[0x10];
+  byte MsgHash2[0x10];
+  byte MsgHash3[0x10];
+  u16 unknown32;
+} ItemWeapon <size=0x90, optimize=false>;
+
+SetBackColor( 0x880000 );
+
+typedef struct
+{
+  u16 entry_count;
+  ItemWeapon entries[ entry_count ];
+} Bin <optimize=false>;
+
+string GetEquippableUser( EquippableUsers& value )
+{
+    if ( value.Protagonist ) return "Protagonist";
+    else if ( value.Strohl ) return "Strohl";
+    else if ( value.Hulkenberg ) return "Hulkenberg";
+    else if ( value.Heismay ) return "Heismay";
+    else if ( value.Junah ) return "Junah";
+    else if ( value.Eupha ) return "Eupha";
+    else if ( value.Fidelio ) return "Fidelio";
+    else if ( value.Basilio ) return "Basilio";
+    else if ( value.Prince ) return "Prince";
+    else if ( value.Grius ) return "Grius";
+    else if ( value.Gallica ) return "Gallica";
+    else if ( value.PX ) return "PX";
+    else if ( value.Neuras ) return "Neuras";
+    else if ( value.Rella ) return "Rella";
+    else if ( value.Louis ) return "Louis";
+    else return "None";
+}
+
+Bin bin;

@@ -1,0 +1,30 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+
+typedef struct
+{
+  SetRandomBackColor();
+  u32 Icon <name="Icon">;
+  u16 unknown;
+  u16 unknown1;
+  u16 SkillIDUsed <name="Skill ID Used">;
+  u16 unknown2;
+  u32 BuyingPrice <name="Buying Price">;
+  u32 SellingPrice <name="Selling Price">;
+  byte MsgHash1[0x10];
+  byte MsgHash2[0x10];
+} ItemConsumable <size=0x34,optimize=false>;
+
+SetBackColor( 0x880000 );
+
+typedef struct
+{
+  u16 entry_count;
+  ItemConsumable entries[ entry_count ];
+} Bin <optimize=false>;
+
+Bin bin;
