@@ -1,0 +1,46 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+
+typedef struct
+{
+  SetRandomBackColor();
+  u16 Unknown;
+  u8 ClassType <name="Class Type">;
+  u8 Unknown;
+  u16 RarityClass <name="Rarity">;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  byte MsgHash1[0x10];
+  byte MsgHash2[0x10];
+  byte MsgHash3[0x10];
+  byte MsgHash4[0x10];
+} Class1 <size=0x6C, optimize=false>;
+
+SetBackColor( 0x880000 );
+
+local uint i = 0;
+for ( i = 0; i < ( FileSize() ) / 0x6C; i++ )
+{
+  Class1 Class;
+}

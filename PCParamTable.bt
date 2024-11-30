@@ -1,0 +1,30 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+FSeek (0x10);
+typedef struct
+{
+  SetRandomBackColor();
+  u16 RoyalVirtues <name="Royal Virtues">;
+  u16 unknown;
+  u16 unknown;
+  u16 unknown;
+  u16 unknown;
+  u16 unknown;
+  u16 unknown;
+  u16 Rank2 <name="Point Needed for Rank 2">;
+  u16 Rank3 <name="Point Needed for Rank 3">;
+  u16 Rank4 <name="Point Needed for Rank 4">;
+  u16 Rank5 <name="Point Needed for Rank 5">;
+} PCParameter <size=0x16, optimize=false>;
+
+SetBackColor( 0x880000 );
+
+local uint i = 0;
+for ( i = 0; i < ( 110 ) / 0x16; i++ )
+{
+  PCParameter PCParameter1;
+}

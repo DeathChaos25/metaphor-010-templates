@@ -11,8 +11,23 @@ typedef struct
   u16 SkillSynthesis <name="Skill Synthesis">;
   u16 ArchetypeClass <name="Archetype Usable", comment = "The Archetype that can use this synthesis skill.">;
   u16 RequiredSkill <name="Required Skill", comment = "The required skill will be changed but not the description. It needs to be manually edited.">;
-  u16 unknown3;
-  byte MsgHash1[0x58];
+  u16 Unknown;
+  byte MsgHash1[0x10];
+  byte MsgHash2[0x10];
+  byte MsgHash3[0x10];
+  byte MsgHash4[0x10];
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
+  u16 Unknown;
 } Synthesis <size=0x60, optimize=false>;
 
 SetBackColor( 0x880000 );

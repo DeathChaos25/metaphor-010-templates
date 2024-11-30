@@ -30,14 +30,14 @@ typedef struct
   byte MsgHash2[0x10];
   byte MsgHash3[0x10];
   u16 unknown5;
-} ItemArmor <size=0x58, optimize=false>;
+} ItemSubArmor <size=0x58, optimize=false>;
 
 SetBackColor( 0x880000 );
 
 typedef struct
 {
   u16 entry_count;
-  ItemArmor entries[ entry_count ];
+  ItemSubArmor entries[ entry_count ];
 } Bin <optimize=false>;
 
 string GetEquippableUser( EquippableUsers& value )
