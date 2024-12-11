@@ -1,0 +1,29 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+typedef struct
+{
+  SetRandomBackColor();
+  u16 field00;
+  u16 field02;
+  u16 field04;
+  u16 field06;
+  u16 field08;
+  u16 field0A;
+  u16 field0C;
+  u16 field0E;
+  u16 field10;
+  u16 field12;
+  u16 field14;
+} GrowthStartStat <size=0x16, optimize=false>;
+
+SetBackColor( 0x880000 );
+
+local uint i = 0;
+for ( i = 0; i < ( 154 ) / 0x16; i++ )
+{
+  GrowthStartStat GrowthStartStatus;
+}

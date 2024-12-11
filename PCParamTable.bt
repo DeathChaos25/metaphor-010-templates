@@ -9,12 +9,12 @@ typedef struct
 {
   SetRandomBackColor();
   u16 RoyalVirtues <name="Royal Virtues">;
-  u16 unknown;
-  u16 unknown;
-  u16 unknown;
-  u16 unknown;
-  u16 unknown;
-  u16 unknown;
+  u16 field02;
+  u16 field04;
+  u16 field06;
+  u16 field08;
+  u16 field0A;
+  u16 field0C;
   u16 Rank2 <name="Point Needed for Rank 2">;
   u16 Rank3 <name="Point Needed for Rank 3">;
   u16 Rank4 <name="Point Needed for Rank 4">;

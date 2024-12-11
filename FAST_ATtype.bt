@@ -1,0 +1,25 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+FSeek (0xFA4);
+typedef struct
+{
+  SetRandomBackColor();
+  u16 field00;
+  u8 field01;
+  u8 field02;
+  u16 field04;
+  u16 field06;
+  u16 field08;
+} FastAT <size=0xA, optimize=false>;
+
+SetBackColor( 0x880000 );
+
+local uint i = 0;
+for ( i = 0; i < ( 2000 ) / 0xA; i++ )
+{
+  FastAT FastArchetype;
+}

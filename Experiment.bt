@@ -1,0 +1,47 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+typedef struct
+{
+  SetRandomBackColor();
+  u16 field00;
+  u16 field02;
+  u16 field04;
+  u16 field06;
+  u16 DisplayList;
+  u16 field0A;
+  u16 field0C;
+  u16 field0E;
+} FileInfo <size=0x10, optimize=false>;
+
+typedef struct
+{
+  SetRandomBackColor();
+  u16 field00;
+  u16 field02;
+  u16 MaskResult <name="Mask Result">;
+  u16 MaskRequired <name="Mask Required">;
+  u16 MaskAmountNeeded <name="Mask Amount Needed">;
+  u16 MaskRequired2 <name="Second Mask Required">;
+  u16 MaskAmountNeeded2 <name="Second Mask Amount Needed">;
+  u16 MaskRequired3 <name="Third Mask Required">;;
+  u16 MaskAmountNeeded3 <name="Third Mask Amount Needed">;;
+  u16 field12;
+} Experiment <size=0x14, optimize=false>;
+
+SetBackColor( 0x880000 );
+
+typedef struct {
+	FileInfo Segmentinfo;
+} Initialinfo <optimize=false>;
+Initialinfo Initialinfo1;
+
+typedef struct {
+	FSeek(0x10);
+    Experiment List[FileSize() / 20 ];
+} ExperimentList <optimize=false>;
+ExperimentList ExperimentList1;
+

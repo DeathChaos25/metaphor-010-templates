@@ -1,0 +1,24 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+FSeek (0x12C4);
+typedef struct
+{
+  SetRandomBackColor();
+  u16 field00;
+  u16 field02;
+  u16 field04;
+  u16 field06;
+ 
+} GrowthSP <size=0x8, optimize=false>;
+
+SetBackColor( 0x880000 );
+
+local uint i = 0;
+for ( i = 0; i < ( 2400 ) / 0x8; i++ )
+{
+  GrowthSP GrowthSupport;
+}

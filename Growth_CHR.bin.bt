@@ -1,0 +1,36 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+FSeek (0xB9A4);
+typedef struct
+{
+  u16 CharacterID <name="Character ID">;
+  u16 CharacterLevel <name="Character Level">;
+  u16 CharacterEXP <name="EXP Required">;
+  u16 field06;
+  u16 AddedHP <name="Bonus HP">; 
+  u16 AddedMP <name="Bonus MP">;
+  u16 AddedSTR <name="Bonus STR">;
+  u16 AddedMA <name="Bonus MA">;
+  u16 AddedEND <name="Bonus END">;
+  u16 AddedAGI <name="Bonus AGI">;
+  u16 AddedLUK <name="Bonus LUK">;
+} collection;
+
+typedef struct
+{
+  SetRandomBackColor();
+  collection CharacterTreeLevel[99];
+ 
+} GrowthCHR <size=0x882, optimize=false>;
+
+SetBackColor( 0x880000 );
+
+local uint i = 0;
+for ( i = 0; i < ( 26136 ) / 0x882; i++ )
+{
+  GrowthCHR GrowthCharacter;
+}
