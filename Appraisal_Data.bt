@@ -1,0 +1,41 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+FSeek (0x2204);
+typedef struct
+{
+  SetRandomBackColor();
+  u16 field00;
+  u16 field02;
+  u16 field04;
+  u16 field06;
+  u16 EquipID <name="Equipment ID">;
+  u16 MoneyCost <name="Money Cost">;
+  u16 AppraisalResult <name="Appraisal Result Equipment ID 1">;
+  u16 AppraisalResult1 <name="Appraisal Result Equipment ID 2">;
+  u16 AppraisalResult2 <name="Appraisal Result Equipment ID 3">;
+  u16 AppraisalResult3 <name="Appraisal Result Equipment ID 4">;
+  u16 AppraisalResult4 <name="Appraisal Result Equipment ID 5">;
+  u16 AppraisalResult5 <name="Appraisal Result Equipment ID 6">;
+  u16 field18;
+  u16 field1A;
+  u16 field1C;
+  u16 field1E;
+  u16 ChanceResult <name="Chance Result 1">;
+  u16 ChanceResult1 <name="Chance Result 2">;
+  u16 ChanceResult2 <name="Chance Result 3">;
+  u16 ChanceResult3 <name="Chance Result 4">;
+  u16 ChanceResult4 <name="Chance Result 5">;
+  u16 ChanceResult5 <name="Chance Result 6">;
+} Appraisal <size=0x2C, optimize=false>;
+
+SetBackColor( 0x880000 );
+
+local uint i = 0;
+for ( i = 0; i < ( 4364 ) / 0x2C; i++ )
+{
+  Appraisal AppraisalData;
+}

@@ -1,0 +1,33 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+typedef struct
+{
+  SetRandomBackColor();
+  u32 Field00;
+  u32 HelperID;
+  char origin_bone[0x20];
+  char new_bone[0x20];
+  u64 alignment;
+  TVector3 Position;
+  int alignment;
+  TVector4 Rotation;
+  TVector3 Scale;
+  u32 alignment;
+} helper_entry <optimize=false, read=Str( "%s : %s - %d", origin_bone, new_bone, HelperID )>;
+
+typedef struct
+{
+  u32 Field00;
+  u32 entry_count;
+  u32 start_location;
+
+  FSeek(start_location);
+
+  helper_entry entries[ entry_count ];
+} ANOBJ <optimize=false>;
+
+ANOBJ bin;
