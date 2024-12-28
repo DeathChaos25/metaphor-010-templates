@@ -3,20 +3,26 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
 FSeek (0xCF4);
 typedef struct
 {
   SetRandomBackColor();
-  u16 EquipmentIDRequired <name="Equipment Required">;
+  EquipmentID ID : 12 <name="Equipment Required">;
+  ItemType ItemCategory : 4 <name="Item Category">;
   u16 MoneyCost <name="Money Cost">;
-  u16 Material1 <name="Material 1">;
+  ItemID ID2 : 12 <name="Material 1">;
+  ItemType ItemCategory2 : 4 <name="Item Category">;
   u16 Quantity1 <name="Quantity 1">;
-  u16 Material2 <name="Material 2">;
+  ItemID ID3 : 12 <name="Material 2">;
+  ItemType ItemCategory3 : 4 <name="Item Category">;
   u16 Quantity2 <name="Quantity 2">;
-  u16 Material3 <name="Material 3">;
+  ItemID ID4 : 12 <name="Material 3">;
+  ItemType ItemCategory4 : 4 <name="Item Category">;
   u16 Quantity3 <name="Quantity 3">;
-  u16 EquipmentIDResult <name="Purify Equip Result">;
+  EquipmentID ID1 : 12 <name="Purify Equip Result">;
+  ItemType ItemCategory1 : 4 <name="Item Category">;
 
 } Purify <size=0x12, optimize=false>;
 

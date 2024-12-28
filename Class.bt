@@ -3,6 +3,7 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
 
 typedef struct
@@ -11,7 +12,7 @@ typedef struct
   u16 Unknown;
   u8 ClassType <name="Class Type">;
   u8 Unknown;
-  u16 RarityClass <name="Rarity">;
+  ClassRarity RarityClass <name="Rarity">;
   u16 Unknown;
   u16 Unknown;
   u16 Unknown;

@@ -3,14 +3,14 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
-
+#include "metaphor_enums.bt"
 
 typedef struct
 {
   SetRandomBackColor();
-  u32 Icon <name="Icon">;
-  u16 unknown;
-  u16 unknown1;
+  IconType Icon <name="Icon">;
+  u16 field04;
+  u16 field06;
   u32 BuyingPrice <name="Buying Price">;
   u32 SellingPrice <name="Selling Price">;
   byte MsgHash1[0x10];

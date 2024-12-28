@@ -3,11 +3,12 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
 FSeek (0xB9A4);
 typedef struct
 {
-  u16 CharacterID <name="Character ID">;
+  CharacterID CharaID <name="Character ID">;
   u16 CharacterLevel <name="Character Level">;
   u16 CharacterEXP <name="EXP Required">;
   u16 field06;

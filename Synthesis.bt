@@ -3,31 +3,31 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
-
+#include "metaphor_enums.bt"
 
 typedef struct
 {
   SetRandomBackColor();
-  u16 SkillSynthesis <name="Skill Synthesis">;
-  u16 ArchetypeClass <name="Archetype Usable", comment = "The Archetype that can use this synthesis skill.">;
-  u16 RequiredSkill <name="Required Skill", comment = "The required skill will be changed but not the description. It needs to be manually edited.">;
-  u16 Unknown;
+  SkillID SkillSynthesis <name="Skill Synthesis">;
+  ArchetypeClassID ArchetypeClass <name="Archetype Usable", comment = "The Archetype that can use this synthesis skill.">;
+  SkillID RequiredSkill <name="Required Skill", comment = "The required skill will be changed but not the description. It needs to be manually edited.">;
+  u16 field06;
   byte MsgHash1[0x10];
   byte MsgHash2[0x10];
   byte MsgHash3[0x10];
   byte MsgHash4[0x10];
-  u16 Unknown;
-  u16 Unknown;
-  u16 Unknown;
-  u16 Unknown;
-  u16 Unknown;
-  u16 Unknown;
-  u16 Unknown;
-  u16 Unknown;
-  u16 Unknown;
-  u16 Unknown;
-  u16 Unknown;
-  u16 Unknown;
+  u16 field48;
+  u16 field4A;
+  u16 field4C;
+  u16 field4E;
+  u16 field50;
+  u16 field52;
+  u16 field54;
+  u16 field56;
+  u16 field58;
+  u16 field5A;
+  u16 field5C;
+  u16 field5E;
 } Synthesis <size=0x60, optimize=false>;
 
 SetBackColor( 0x880000 );

@@ -3,6 +3,7 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
 FSeek (0x2204);
 typedef struct
@@ -12,14 +13,21 @@ typedef struct
   u16 field02;
   u16 field04;
   u16 field06;
-  u16 EquipID <name="Equipment ID">;
+  ItemID ID : 12 <name="Item ID">;
+  ItemType ItemCategory : 4 <name="Item Category">; 
   u16 MoneyCost <name="Money Cost">;
-  u16 AppraisalResult <name="Appraisal Result Equipment ID 1">;
-  u16 AppraisalResult1 <name="Appraisal Result Equipment ID 2">;
-  u16 AppraisalResult2 <name="Appraisal Result Equipment ID 3">;
-  u16 AppraisalResult3 <name="Appraisal Result Equipment ID 4">;
-  u16 AppraisalResult4 <name="Appraisal Result Equipment ID 5">;
-  u16 AppraisalResult5 <name="Appraisal Result Equipment ID 6">;
+  EquipmentID ID1 : 12 <name="Appraisal Result Equipment ID">;
+  ItemType ItemCategory1 : 4 <name="Item Category">;
+  EquipmentID ID2 : 12 <name="Appraisal Result Equipment ID 2">;
+  ItemType ItemCategory2 : 4 <name="Item Category">;
+  EquipmentID ID3 : 12 <name="Appraisal Result Equipment ID 3">;
+  ItemType ItemCategory3 : 4 <name="Item Category">;
+  EquipmentID ID4 : 12 <name="Appraisal Result Equipment ID 4">;
+  ItemType ItemCategory4 : 4 <name="Item Category">;
+  EquipmentID ID5 : 12 <name="Appraisal Result Equipment ID 5">;
+  ItemType ItemCategory5 : 4 <name="Item Category">;
+  EquipmentID ID6 : 12 <name="Appraisal Result Equipment ID 6">;
+  ItemType ItemCategory6 : 4 <name="Item Category">;
   u16 field18;
   u16 field1A;
   u16 field1C;

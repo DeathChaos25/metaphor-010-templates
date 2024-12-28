@@ -3,7 +3,6 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
-#include "metaphor_enums.bt"
 
 typedef struct
 {
@@ -23,10 +22,15 @@ typedef struct
   SetRandomBackColor();
   u16 field00;
   u16 field02;
-  ItemID ID : 12 <name="Reward Item">;
-  ItemType ItemCategory : 4 <name="Item Category">; 
+  u16 field04;
   u16 field06;
-} RewardList <size=0x8, optimize=false>;
+  u16 field08;
+  u16 field0A;
+  u16 field0C;
+  u16 field0E;
+  u16 field10;
+  u16 field12;
+} ShopTable <size=0x14, optimize=false>;
 
 SetBackColor( 0x880000 );
 
@@ -37,7 +41,7 @@ Initialinfo Initialinfo1;
 
 typedef struct {
 	FSeek(0x10);
-    RewardList List[(FileSize() - 16 ) / 8 ];
-} RewardList1 <optimize=false>;
-RewardList1 RewardList2;
+    ShopTable List[(FileSize() - 16 )/ 20 ];
+} ShopTableList <optimize=false>;
+ShopTableList ShopTableList1;
 

@@ -3,11 +3,12 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
 FSeek (0xB404);
 typedef struct
 {
-  u16 ArchetypeClass <name="Archetype Class">;
+  ArchetypeClassID ArchetypeClass <name="Archetype Class">;
   u16 ArchetypeRank <name="Archetype Rank">;
   u16 EXPRequired <name="EXP Required">;
   u16 field06;

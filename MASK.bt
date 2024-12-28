@@ -3,6 +3,7 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
 typedef struct
 {
@@ -20,7 +21,8 @@ typedef struct
 typedef struct
 {
   SetRandomBackColor();
-  u16 MaskID <name="Mask ID">;
+  AccessoriesID ID1 : 12 <name="Mask Item">;
+  ItemType ItemCategory : 4 <name="Item Category">;  
   u16 field02;
   u16 field04;
   u16 field06;

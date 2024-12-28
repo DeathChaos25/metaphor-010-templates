@@ -3,6 +3,7 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
 typedef struct
 {
@@ -10,7 +11,7 @@ typedef struct
   
   u32 Flags<format=hex>;
   u32 Field04;
-  u16 EnemyID[6];
+  EnemyID EnemyIDList[6];
   s16 fld_major;
   s16 fld_minor;
   u16 bgm_cue_id;

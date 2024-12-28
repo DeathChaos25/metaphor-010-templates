@@ -1,0 +1,19 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+
+typedef struct
+{
+  SetRandomBackColor();
+  
+  u8 Unknown[59];
+} ClassTrait <size=0x3B, optimize=true>;
+
+typedef struct
+{
+  ClassTrait entries[ FileSize()  / 0x3B ];
+} Bin <optimize=false>;
+
+Bin bin;

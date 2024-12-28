@@ -3,41 +3,42 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
 FSeek (0x1684);
 typedef struct
 {
   SetRandomBackColor();
-  u16 ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
+  ArchetypeClassID ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
   u16 SkillRankLevel <name="Skill Rank Learned", comment="Put 1 for default learned skill">;
-  u16 SkillID <name="Skill ID", comment="Select Skill ID to learn. Select Either Passive or Active Skills">;
-  u16 ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
+  SkillID SkillIDLearn <name="Skill ID", comment="Select Skill ID to learn. Select Either Passive or Active Skills">;
+  ArchetypeClassID ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
   u16 SkillRankLevel <name="Skill Rank Learned", comment="Put 1 for default learned skill">;
-  u16 SkillID <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
-  u16 ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
+  SkillID SkillIDLearn <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
+  ArchetypeClassID ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
   u16 SkillRankLevel <name="Skill Rank Learned", comment="Put 1 for default learned skill">;
-  u16 SkillID <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
-  u16 ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
+  SkillID SkillIDLearn <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
+  ArchetypeClassID ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
   u16 SkillRankLevel <name="Skill Rank Learned", comment="Put 1 for default learned skill">;
-  u16 SkillID <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
-  u16 ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
+  SkillID SkillIDLearn <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
+  ArchetypeClassID ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
   u16 SkillRankLevel <name="Skill Rank Learned", comment="Put 1 for default learned skill">;
-  u16 SkillID <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
-  u16 ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
+  SkillID SkillIDLearn <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
+  ArchetypeClassID ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
   u16 SkillRankLevel <name="Skill Rank Learned", comment="Put 1 for default learned skill">;
-  u16 SkillID <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
-  u16 ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
+  SkillID SkillIDLearn <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
+  ArchetypeClassID ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
   u16 SkillRankLevel <name="Skill Rank Learned", comment="Put 1 for default learned skill">;
-  u16 SkillID <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
-  u16 ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
+  SkillID SkillIDLearn <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
+  ArchetypeClassID ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
   u16 SkillRankLevel <name="Skill Rank Learned", comment="Put 1 for default learned skill">;
-  u16 SkillID <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
-  u16 ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
+  SkillID SkillIDLearn <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
+  ArchetypeClassID ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
   u16 SkillRankLevel <name="Skill Rank Learned", comment="Put 1 for default learned skill">;
-  u16 SkillID <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
-  u16 ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
+  SkillID SkillIDLearn <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
+  ArchetypeClassID ArchetypeClass <name="Archetype Class", comment="Select which Archetype to learn this skill">;
   u16 SkillRankLevel <name="Skill Rank Learned", comment="Put 1 for default learned skill">;
-  u16 SkillID <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
+  SkillID SkillIDLearn <name="Skill ID", comment="Select Skill ID to learn. Select Active Skills">;
 } GrowthSkill <size=0x3C, optimize=false>;
 
 SetBackColor( 0x880000 );

@@ -3,6 +3,7 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
 typedef struct
 {
@@ -20,7 +21,7 @@ typedef struct
 typedef struct
 {
   SetRandomBackColor();
-  u16 SkillIDInheritable <name="Skill ID Inheritance">;
+  SkillID SkillIDInheritable <name="Skill ID Inheritance">;
   u16 field02;
   u32 MaglaCost <name="Magla Cost">;
 } SkillList <size=0x8, optimize=false>;
@@ -34,7 +35,7 @@ Initialinfo Initialinfo1;
 
 typedef struct {
 	FSeek(0x10);
-  SkillList List[(FileSize() - 16 )/ 8 ];
+    SkillList List[(FileSize() - 16 )/ 8 ];
 } SkillInheritance <optimize=false>;
 SkillInheritance SkillInheritanceList;
 

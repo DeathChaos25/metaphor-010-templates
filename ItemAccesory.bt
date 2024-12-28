@@ -3,31 +3,32 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
 
 typedef struct
 {
   SetRandomBackColor();
-  u32 Icon <name="Icon">;
-  u16 unknown;
-  u16 unknown1;
+  IconType Icon <name="Icon">;
+  u16 field04;
+  u16 field06;
   EquippableUsers Users;
-  u16 unknown2;
+  u16 field0C;
   u8 Strength;
   u8 Magic;
   u8 Endurance;
   u8 Agility;
   u8 Luck;
-  u8 unknown3;
-  u16 PassiveSKillID <name = "Passive Skill ID Usage", comment = "Passive Skill will be changed in battle but not the description. You have to manually edit in MSG">;
-  u16 ActiveSKillID <name = "Active Skill ID Usage", comment = "Active Skill will be changed in battle but not the description. You have to manually edit in MSG">;
+  u8 field13;
+  SkillID PassiveSKillID <name = "Passive Skill ID Usage", comment = "Passive Skill will be changed in battle but not the description. You have to manually edit in MSG">;
+  SkillID ActiveSKillID <name = "Active Skill ID Usage", comment = "Active Skill will be changed in battle but not the description. You have to manually edit in MSG">;
   u32 BuyingPrice <name="Buying Price">;
   u32 SellingPrice <name="Selling Price">;
-  u16 Rarity <name="Rarity">;;
+  EquipRarity Rarity <name="Rarity">;;
   byte MsgHash1[0x10];
   byte MsgHash2[0x10];
   byte MsgHash3[0x10];
-  u16 unknown4;
+  u16 field52;
 } ItemAccessory <size=0x54, optimize=false>;
 
 SetBackColor( 0x880000 );

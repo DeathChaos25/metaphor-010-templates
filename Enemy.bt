@@ -3,18 +3,19 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
 typedef struct{
     SetRandomBackColor();
 
     EnemyTBLUnitFlags Flags<name="Unit Flags">;
-    u16 Category;
+    CategoryEnemyID Category;
     u32 Level;
     u32 HP;
     u16 MP;
     u16 field0e;
     Unit_Stats Stats<name="Unit Stats">;
-    u16 Skill[8]<name="Unit Skills">;
+    SkillID Skill[8]<name="Unit Skills">;
     u16 EXP;
     u16 AEXP;
     u16 MAG;
@@ -22,9 +23,11 @@ typedef struct{
     u16 field2e;
     u8 field30;
     u8 field31;
-    u16 CommonDropItem;
+	ItemID ID1 : 12 <name="Common Drop Item">;
+    ItemType ItemCategory : 4 <name="Item Category">;  
     u16 CommonDropRate;
-    u16 RareDropItem;
+    ItemID ID2 : 12 <name="Rare Drop Item">;
+    ItemType RareItemCategory : 4 <name="Item Category">;  
     u16 RareDropRate;
     u16 field3a;
     u16 field3c;
@@ -38,7 +41,6 @@ typedef struct{
     u16 field52;
     u8 NameHash[0x10];
 } EnemyTBLStruct <optimize=false>;
-
 
 typedef struct {
     EnemyTBLStruct Enemy[FileSize() / 100 ];

@@ -3,6 +3,7 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
 typedef struct
 {
@@ -20,13 +21,13 @@ typedef struct
 typedef struct
 {
   SetRandomBackColor();
-  u16 ArchetypeClass;
+  ArchetypeClassID ArchetypeClass;
   u16 field02;
-  u16 ArchetypeClassRequired <name="Archetype Class Required">;
+  ArchetypeClassID ArchetypeClassRequired <name="Archetype Class Required">;
   u16 ArchetypeRankRequired <name="Archetype Rank Required">;
-  u16 ArchetypeClassRequired1 <name="Archetype Class 2 Required">;
+  ArchetypeClassID ArchetypeClassRequired1 <name="Archetype Class 2 Required">;
   u16 ArchetypeRankRequired1 <name="Archetype Rank 2 Required">;
-  u16 ArchetypeClassRequired2 <name="Archetype Class 3 Required">;
+  ArchetypeClassID ArchetypeClassRequired2 <name="Archetype Class 3 Required">;
   u16 ArchetypeRankRequired2 <name="Archetype Rank 3 Required">;
   u32 MaglaNeeded <name="Magla Needed", comment="Regicide adds 33% more from this base Magla needed before discounted from Follower Rank">;
   u16 field12;

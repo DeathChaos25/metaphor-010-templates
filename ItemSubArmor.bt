@@ -3,16 +3,16 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
-
+#include "metaphor_enums.bt"
 
 typedef struct
 {
   SetRandomBackColor();
-  u32 Icon <name="Icon">;
+  IconType Icon <name="Icon">;
   EquippableUsers Users;
-  u16 unknown;
-  u16 unknown1;
-  u16 unknown2;
+  u16 field08;
+  u16 field0A;
+  u16 field0C;
   u16 DEF <name="Defense">;
   u16 EVA <name="Evasion">;
   u8 Strength;
@@ -20,16 +20,16 @@ typedef struct
   u8 Endurance;
   u8 Agility;
   u8 Luck;
-  u8 unknown3;
-  u16 PassiveSKillID <name = "Passive Skill ID Usage", comment = "Passive Skill will be changed in battle but not the description. You have to manually edit in MSG">;
-  u16 unknown4;
+  u8 field16;
+  SkillID PassiveSKillID <name = "Passive Skill ID Usage", comment = "Passive Skill will be changed in battle but not the description. You have to manually edit in MSG">;
+  u16 field1A;
   u32 BuyingPrice <name="Buying Price">;
   u32 SellingPrice <name="Selling Price">;
-  u16 Rarity <name="Rarity">;
+  EquipRarity Rarity <name="Rarity">;
   byte MsgHash1[0x10];
   byte MsgHash2[0x10];
   byte MsgHash3[0x10];
-  u16 unknown5;
+  u16 field56;
 } ItemSubArmor <size=0x58, optimize=false>;
 
 SetBackColor( 0x880000 );
