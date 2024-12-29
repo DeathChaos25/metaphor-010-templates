@@ -35,11 +35,36 @@ typedef struct
   u8 Field1C;
   ApplyOrCure Apply_Cure;
   u8 ProbabilityApplyCure<name="% of Chance to Apply/Cure">;
-  u32 Ailments;
+  struct
+        {
+            bool Poison : 1 <name = "Poison">;
+            bool Malady : 1 <name = "Malady">;
+            bool Paralysis : 1 <name = "Paralysis">;
+            bool Hex : 1 <name = "Hex">;
+            bool Burn : 1 <name = "Burn">;
+            bool Frostbite : 1 <name = "Frostbite">;
+        } Effect1 <name = "Effect List 1">;
+
+   struct
+        {
+            bool Charm : 1 <name = "Charm">;
+            bool Daze : 1 <name = "Daze">;
+            bool Forget : 1 <name = "Forget">;
+            bool Sleep : 1 <name = "Sleep">;
+        } Effect2 <name = "Effect List 2">;
+
+  struct
+        {
+            bool Rage : 1 <name = "Rage">;
+            bool Anxiety : 1 <name = "Anxiety">;
+            bool Fear : 1 <name = "unk">;
+            bool KO : 1 <name = "KO">;
+        } Effect3 <name = "Effect List 3">;
+  byte Ailments;
   u16 Field24;
   u16 Field26;
   u16 Field28;
-  u16 Field2A;
+  u16 Field2A <name="Crit Chance">;
   u16 Field2C;
   u16 Field2E;
 } SkillNormalTBL <optimize=false, read=Str( "%02d %04d", MP_Cost, Accuracy )>; // size=0x30, 
