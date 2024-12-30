@@ -1,0 +1,93 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+#include "metaphor_enums.bt"
+
+typedef struct
+{
+  SetRandomBackColor();
+  u16 field00;
+  u16 field02;
+  u16 field04;
+  u16 field06;
+  u16 DisplayList;
+  u16 field0A;
+  u16 field0C;
+  u16 field0E;
+} FileInfo <size=0x10, optimize=false>;
+
+typedef struct
+{
+  SetRandomBackColor();
+  u16 field00;
+    u16 field02;
+    u16 field04;
+    u16 field06;
+    u16 field08;
+    u16 field0A;
+    u16 field0C;
+    u16 field0E;
+    u16 field10;
+    u16 field12;
+    u16 field14;
+    u16 field16;
+    u16 field18;
+    u16 field1A;
+    u16 field1C;
+    u16 field1E;
+    u32 QuestBountyReward <name="Quest Bounty Reward">;
+    u16 field24;
+    u16 field26;
+    u16 field28;
+    u16 field2A;
+    u16 field2C;
+    u16 field2E;
+    u16 field30;
+    u16 field32;
+    u16 field34;
+    u16 field36;
+    u16 field38;
+    u16 field3A;
+    u16 field3C;
+    u16 field3E;
+    u16 field40;
+    u16 field42;
+    u16 field44;
+    u16 field46;
+    RoyalVirtueType RoyalVirtue <name="Royal Virtue Type">;
+    u16 field4A;
+    u16 RoyalVirtuesPointReward <name="Royal Virtue Point Reward">;
+    u16 field4E;
+    u16 field50;
+    u16 field52;
+    u16 field54;
+    u16 field56;
+    u16 field58;
+    u16 field5A;
+    u16 field5C;
+    u16 field5E;
+    byte MsgHash1[0x10];
+    byte MsgHash2[0x10];
+	byte MsgHash3[0x10];
+    byte MsgHash4[0x10];
+	byte MsgHash5[0x10];
+    byte MsgHash6[0x10];
+	byte MsgHash7[0x10];
+	byte MsgHash8[0x10];
+} Quest <size=0xE0, optimize=false>;
+
+SetBackColor( 0x880000 );
+
+typedef struct {
+	FileInfo Segmentinfo;
+} Initialinfo <optimize=false>;
+Initialinfo Initialinfo1;
+
+typedef struct {
+	FSeek(0x10);
+    Quest List[(FileSize() - 16 )/ 224 ];
+} QuestID <optimize=false>;
+QuestID QuestIDList;
+

@@ -63,8 +63,10 @@ enum <byte> CostTypeEnum
 
 enum <byte> TargetCount
 {
-    SingleFoe = 0,
-    AllFoes = 1
+    Single = 0,
+    AllFoes = 1,
+	AllEnemiesAllies = 2,
+	OneRow = 4,
 };
 
 enum <byte> PassiveOrActive

@@ -3,12 +3,25 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
-FSeek (0x10);
 typedef struct
 {
   SetRandomBackColor();
-  u16 RoyalVirtues <name="Royal Virtues">;
+  u16 field00;
+  u16 field02;
+  u16 field04;
+  u16 field06;
+  u16 DisplayList;
+  u16 field0A;
+  u16 field0C;
+  u16 field0E;
+} FileInfo <size=0x10, optimize=false>;
+
+typedef struct
+{
+  SetRandomBackColor();
+  RoyalVirtueType RoyalVirtues <name="Royal Virtues">;
   u16 field02;
   u16 field04;
   u16 field06;
@@ -23,8 +36,13 @@ typedef struct
 
 SetBackColor( 0x880000 );
 
-local uint i = 0;
-for ( i = 0; i < ( 110 ) / 0x16; i++ )
-{
-  PCParameter PCParameter1;
-}
+typedef struct {
+	FileInfo Segmentinfo;
+} Initialinfo <optimize=false>;
+Initialinfo Initialinfo1;
+
+typedef struct {
+	FSeek(0x10);
+    PCParameter RoyalStatus[(FileSize() - 16 )/ 22 ];
+} RoyalVirtue <optimize=false>;
+RoyalVirtue RoyalVirtueStatus;

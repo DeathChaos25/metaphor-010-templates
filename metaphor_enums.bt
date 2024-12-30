@@ -63,6 +63,15 @@ enum<short> ArchetypeClassID
 	RESERVE13 = 60,
 };
 
+enum<short> RoyalVirtueType
+{
+	Courage = 0,
+	Wisdom = 1,
+	Tolerance = 2,
+	Eloquence = 3,
+	Imagination = 4,
+};
+
 enum<short> ClassRarity
 {
 	Origin = 1,
@@ -78,6 +87,123 @@ enum<short> EquipRarity
 	Rare = 2,
 	Epic = 3,
 	Legendary = 4,
+};
+
+enum<ushort> CasterEffect
+{
+	BuffStack = 8,
+	RecarmdraType = 1,
+	CasterDies = 9,
+};
+
+enum<byte> DamageType
+{
+	DealDamage = 1,
+	HealHP = 2,
+	DealFixedDamage = 4,
+	HealFixedHPorMP = 5,
+	ProportionalDamageBasedonRemainingHP = 6,
+	DamagePercentCasterCurrentHP = 8,
+	DrainHP = 9,
+	DamagePercentEnemyCurrentHP = 10,
+	HealPercentTotalHP = 11,
+	DrainFixedHP = 12,
+	DrainFixedMP = 13,
+	UnknownDamageType = 14,
+	DrainHPorMP = 17,
+};
+
+enum<uint> AilmentType
+{
+	Poison = 1,
+	Malady = 2,
+	Paralysis = 4,
+	Hex = 8,
+	PoisonHex = 9,
+	Burn = 16,
+	Frostbite = 32,
+	BurnFrostbite = 48,
+	Charm = 4096,
+	Daze = 8192,
+	Forget = 16384,
+	Sleep = 32768,
+	Rage = 65536,
+	AllStatusAilment = 258111,
+	Death = 524288,
+};
+
+enum<ushort> BuffDebuffEffectType
+{
+	IncreaseAttack = 1,
+	LowerAttack = 2,
+	IncreaseDefense = 3,
+	LowerDefense = 4,
+	IncreaseAttackandDefense = 5,
+	LowerAttackandDefense = 6,
+	IncreaseEvasion = 7,
+	LowerEvasion = 8,
+	IncreaseAttackandDefenseandEvasion = 9,
+	LowerAttackandDefenseandEvasion = 10,
+	IncreaseCritical = 11,
+	OneTimeWeaknesstoSlashPierceStrike = 12,
+	OneTimeWeaknesstoPierce = 14,
+	OneTimeWeaknesstoStrike = 15,
+	OneTimeWeaknesstoFire = 16,
+	OneTimeWeaknesstoIce = 17,
+	OneTimeWeaknesstoElectric = 18,
+	OneTimeWeaknesstoWind = 19,
+	OneTimeWeaknesstoLight = 20,
+	OneTimeWeaknesstoDark = 21,
+	NullifyAttackSlashPierceStrike = 22,
+	BarrierAllElement = 23,
+	PowerCharge = 24,
+	MindCharge = 25,
+	TetrakarnEffect = 26,
+	MakarakarnEffect = 27,
+	NullTetrakarn = 28,
+	NullMakarakarn = 29,
+	HitRate100 = 30,
+	Taunt = 32,
+	OneTimeWeaknesstoAllElement = 33,
+	RemoveBuff = 34,
+	RemoveDebuff = 35,
+	NullTetraMakara = 36,
+	RemoveStatusRepelStrengthBuff = 37,
+	TenPercentHealPerTurn = 39,
+	OneTimeEndure = 40,
+	BarrierNullifyAilment = 41,
+	BarrierAllElementExceptAlmighty = 42,
+};
+
+enum<ushort> SpecialEffectType
+{
+	BuffDebuffEffect1Rank = 1,
+	BuffDebuffEffect2Rank = 2,
+	BuffDebuffEffect3Rank = 3,
+	GuaranteeEscape = 256,
+	DecreasePlayerPartyAvailableFund = 512,
+	TargetTribeKO = 1024,
+	IgnoreResistance = 1536,
+	HealingEffect = 1792,
+	BuffEffect1Rank = 2049,
+	BuffEffect2Rank = 2050,
+	AddTwoTurn = 2304,
+	AddFourTurn = 2560,
+	AddEightTurn = 2816,
+	StealItem = 3072,
+	AnyAilmentsHitWeak = 3328,
+	UnpredictableDamageAmount = 3584,
+	RandomTurnIconAddedorRemoved = 3840,
+	StealMAG = 4096,
+	MoveAlltoFrontRowBuff2Ranks = 4354,
+	MoveAlltoBackRowBuff2Ranks = 4610,
+	RecoversMPEachHit = 5376,
+	Add1TurnIconKillingBlow = 5888,
+	AilmentHitCriticalAlways = 6144,
+	IncreaseDamagetoHumanMonsters = 6400,
+	SetMaxHPAll300 = 6656,
+	AutoGuard = 6912,
+	HigherAGIHigherSuccess = 7168,
 };
 
 enum<short> ElementalAttack
@@ -113,6 +239,7 @@ enum<short> ItemType
 	MaskFusion_ItemType = 3,
 	ConsumablesAttackMask_ItemType = 4,
 	MaskMaterial_ItemType = 5,
+	BLANKTYPE = 15,
 };
 
 enum<ushort> ItemID
@@ -891,6 +1018,7 @@ enum<ushort> ItemID
     DESERTGLASS_LANTERN = 771,
     BRIGITTAS_BROOCH = 772,
     WHITE_RAVEN_QUILL = 773,
+	BLANKITEM1 = 4095,
 };
 
 enum<ushort> EnemyID
