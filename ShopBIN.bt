@@ -22,12 +22,12 @@ typedef struct
 {
   SetRandomBackColor();
   ItemID ID : 12 <name="Item ID">;
-  ItemType ItemCategory : 4 <name="Item Category">;
+  ShopType ItemCategory : 4 <name="Shop Type">;
   u16 Limit;
   u16 field04;
   u16 field06;
-  u16 field08;
-  u16 Flag;
+  u16 Flag1;
+  u16 Flag2;
   u16 field0C;
   u16 field0E;
 } ShopList <size=0x10, optimize=false>;

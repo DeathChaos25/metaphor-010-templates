@@ -11,20 +11,106 @@ typedef struct
   SkillID SkillSynthesis <name="Skill Synthesis">;
   ArchetypeClassID ArchetypeClass <name="Archetype Usable", comment = "The Archetype that can use this synthesis skill.">;
   SkillID RequiredSkill <name="Required Skill", comment = "The required skill will be changed but not the description. It needs to be manually edited.">;
-  u16 field06;
+  KeyItemID RequiredItem : 12 <name="Required Item">;
+  ItemType ItemCategory : 4 <name="Item Category">;  
   byte MsgHash1[0x10];
   byte MsgHash2[0x10];
   byte MsgHash3[0x10];
   byte MsgHash4[0x10];
-  u16 field48;
+  ArchetypeClassID ArchetypeClass1 <name="Specific Archetype Class Required 1", comment = "Archetype Class Requirement 1">;
   u16 field4A;
-  u16 field4C;
-  u16 field4E;
-  u16 field50;
+  struct
+        {
+            bool RESERVE : 1 <name = "RESERVE">;
+            bool Seeker : 1 <name = "Seeker">;
+            bool Mage : 1 <name = "Mage">;
+            bool Warrior : 1 <name = "Warrior">;
+            bool Knight : 1 <name = "Knight">;
+            bool Brawler : 1 <name = "Brawler">;
+            bool Healer : 1 <name = "Healer">;
+            bool Gunner : 1 <name = "Gunner">;
+        } ClassRequirement <name = "Lineage Class Requirement">;
+  struct
+	{
+		bool Thief : 1 <name = "Thief">;
+		bool Faker : 1 <name = "Faker">;
+		bool Commander : 1 <name = "Commander">;
+		bool RESERVE : 1 <name = "RESERVE">;
+		bool Merchant : 1 <name = "Merchant">;
+		bool MaskedDancer : 1 <name = "Masked Dancer">;
+		bool RESERVE1 : 1 <name = "RESERVE">;
+		bool Summoner : 1 <name = "Summoner">;
+	} ClassRequirement2 <name = "Lineage Class Requirement">;
+	struct
+	{
+		bool RESERVE : 1 <name = "RESERVE">;
+		bool Berserker : 1 <name = "Berserker">;
+		bool RESERVE1 : 1 <name = "RESERVE">;
+		bool RESERVE2 : 1 <name = "RESERVE">;
+		bool RESERVE3 : 1 <name = "RESERVE">;
+		bool RESERVE4 : 1 <name = "RESERVE">;
+		bool RESERVE5 : 1 <name = "RESERVE">;
+		bool RESERVE6 : 1 <name = "RESERVE">;
+	} ClassRequirement3 <name = "Lineage Class Requirement">;
+	struct
+	{
+		bool RESERVE : 1 <name = "RESERVE">;
+		bool RESERVE7 : 1 <name = "RESERVE">;
+		bool RESERVE1 : 1 <name = "RESERVE">;
+		bool RESERVE2 : 1 <name = "RESERVE">;
+		bool RESERVE3 : 1 <name = "RESERVE">;
+		bool RESERVE4 : 1 <name = "RESERVE">;
+		bool RESERVE5 : 1 <name = "RESERVE">;
+		bool RESERVE6 : 1 <name = "RESERVE">;
+	} ClassRequirement4 <name = "Lineage Class Requirement">;
+  ArchetypeClassID ArchetypeClass2 <name="Specific Archetype Class Required 2", comment = "Archetype Class Requirement 2">;
   u16 field52;
-  u16 field54;
+  struct
+        {
+            bool RESERVE : 1 <name = "RESERVE">;
+            bool Seeker : 1 <name = "Seeker">;
+            bool Mage : 1 <name = "Mage">;
+            bool Warrior : 1 <name = "Warrior">;
+            bool Knight : 1 <name = "Knight">;
+            bool Brawler : 1 <name = "Brawler">;
+            bool Healer : 1 <name = "Healer">;
+            bool Gunner : 1 <name = "Gunner">;
+        } ClassRequirement5 <name = "Lineage Class Requirement 2">;
+  struct
+	{
+		bool Thief : 1 <name = "Thief">;
+		bool Faker : 1 <name = "Faker">;
+		bool Commander : 1 <name = "Commander">;
+		bool RESERVE : 1 <name = "RESERVE">;
+		bool Merchant : 1 <name = "Merchant">;
+		bool MaskedDancer : 1 <name = "Masked Dancer">;
+		bool RESERVE1 : 1 <name = "RESERVE">;
+		bool Summoner : 1 <name = "Summoner">;
+	} ClassRequirement6 <name = "Lineage Class Requirement 2">;
+	struct
+	{
+		bool RESERVE : 1 <name = "RESERVE">;
+		bool Berserker : 1 <name = "Berserker">;
+		bool RESERVE1 : 1 <name = "RESERVE">;
+		bool RESERVE2 : 1 <name = "RESERVE">;
+		bool RESERVE3 : 1 <name = "RESERVE">;
+		bool RESERVE4 : 1 <name = "RESERVE">;
+		bool RESERVE5 : 1 <name = "RESERVE">;
+		bool RESERVE6 : 1 <name = "RESERVE">;
+	} ClassRequirement7 <name = "Lineage Class Requirement 2">;
+	struct
+	{
+		bool RESERVE : 1 <name = "RESERVE">;
+		bool RESERVE7 : 1 <name = "RESERVE">;
+		bool RESERVE1 : 1 <name = "RESERVE">;
+		bool RESERVE2 : 1 <name = "RESERVE">;
+		bool RESERVE3 : 1 <name = "RESERVE">;
+		bool RESERVE4 : 1 <name = "RESERVE">;
+		bool RESERVE5 : 1 <name = "RESERVE">;
+		bool RESERVE6 : 1 <name = "RESERVE">;
+	} ClassRequirement8 <name = "Lineage Class Requirement 2">;
   u16 field56;
-  u16 field58;
+  ArchetypeClassID ArchetypeClass3 <name="Specific Archetype Class Required 3", comment = "Archetype Class Requirement 3">;
   u16 field5A;
   u16 field5C;
   u16 field5E;
