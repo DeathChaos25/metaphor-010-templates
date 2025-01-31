@@ -32,6 +32,33 @@ typedef struct
 
 typedef struct
 {
+    bool Suicide : 1 <name = "Suicide After Skill Use", comment = "Caster dies after the skill is used">;
+    bool BasicAttack : 1 <name = "Basic Attack Related", comment = "Responsible for using the weapon element, basic attack or opening volley animation, etc">;
+    bool Reinforcements : 1 <name = "Reinforcements Related", comment = "Used on skills that summon new monsters">;
+    bool Unknown : 1 <comment = "Most skills use this">;
+    bool FakersRogueryEffect : 1 <name = "Faker's Roguery Related">;
+    bool Unknown : 1;
+    bool Unknown : 1;
+    bool Unknown : 1;
+    bool Unknown : 1 <comment = "Seemingly used on skills without specific caster behind them">;
+    bool Unknown : 1;
+    bool Unknown : 1;
+    bool Unknown : 1;
+    bool SummoningSkills : 1 <name = "Summoning Skill">;
+    bool StrengthMagicScaling : 1 <name = "Strength or Magic Scaling", comment = "Scales off Strength or Magic, whicher is higher">;
+    bool Unknown : 1;
+    bool Unknown : 1;
+} SkillNormalFlags;
+
+enum<ushort> CasterEffect // TODO DELETE!
+{
+	BuffStack = 8,
+	RecarmdraType = 1,
+	CasterDies = 9,
+};
+
+typedef struct
+{
     bool UseMenu : 1 <name = "Usable Outside of Battle">;
     bool UseBattle : 1 <name = "Usable in Battle">;
     bool bit3 : 1;
@@ -44,14 +71,14 @@ typedef struct
 
 typedef struct
 {
-    byte : 1;
-    byte : 1;
-    byte : 1;
-    byte : 1;
-    bool TargetSelf : 1 <name = "Self">;
-    bool TargetAlly : 1 <name = "Ally (Alive)">;
-    bool bit3 : 1;
-    bool TargetAllyDead : 1 <name = "Ally (Dead)">;
+    bool RandomTargetRelated : 1;
+    bool Unknown : 1;
+    bool RandomTargetRelated2 : 1;
+    bool Unknown : 1;
+    bool TargetSelf : 1 <name = "Self Only">;
+    bool TargetAlly : 1 <name = "Ally (Alive)", comment = "Related to targeting allies with harmful effects, but also to basic attack">;
+    bool TargetDead : 1 <name = "Dead Only">;
+    bool CastersRowOnly : 1 <name = "Caster's row only">;
 } TargetCondition;
 
 enum <byte> CostTypeEnum
@@ -59,14 +86,6 @@ enum <byte> CostTypeEnum
     HP = 1,
     MP = 2,
     Money = 3
-};
-
-enum <byte> TargetCount
-{
-    Single = 0,
-    AllFoes = 1,
-	AllEnemiesAllies = 2,
-	OneRow = 4,
 };
 
 enum <byte> PassiveOrActive
@@ -80,13 +99,16 @@ enum <byte> SkillElement
     Slash = 0,
     Pierce = 1,
     Strike = 2,
-    Fire,
-    Ice,
-    Electric,
-    Wind,
-    Light,
-    Dark,
-    Almighty
+    Fire = 3,
+    Ice = 4,
+    Electric = 5,
+    Wind = 6,
+    Light =7,
+    Dark = 8,
+    Almighty = 9,
+    Healing = 19,
+    Support = 20,
+    Ailment = 21
 };
 
 typedef struct
@@ -118,25 +140,6 @@ enum <byte> ApplyOrCure
     Apply = 1,
     Cure = 2
 };
-
-enum <byte> TargetSide
-{
-    DummyTarSide = 0,
-    Target_Allies = 1,
-    Target_Foes = 2
-};
-
-typedef struct
-{
-    bool Phys : 1 <name = "Physical Damage Skill">;
-    bool Mag : 1 <name = "Magical Damage Skill">;
-    byte : 1;
-    byte : 1;
-    byte : 1;
-    byte : 1;
-    byte : 1;
-    byte : 1;
-} PhysOrMagType;
 
 typedef struct
 {

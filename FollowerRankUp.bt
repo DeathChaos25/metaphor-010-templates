@@ -1,0 +1,32 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+#include "metaphor_enums.bt"
+
+typedef struct {
+    ushort Unknown;
+    ushort Unknown;
+    ushort RankId <name="Rank ID", comment="Probably">;
+    ushort Unknown;
+    ArchetypeClassID UnlockedArchetype <name="Unlocked archetype">;
+    FollowerAbility Ability1 <name="Ability 1">;
+    FollowerAbility Ability2 <name="Ability 1">;
+    FollowerAbility Ability3 <name="Ability 1">;
+    ushort Unknown;
+    ushort Unknown;
+    byte Unknown2[96];
+} FollowerRank <optimize=false, read=Str("%s    %s    %s", EnumToString(Ability1), EnumToString(Ability2), EnumToString(Ability3))>;
+
+typedef struct
+{
+  FollowerID Follower;
+  u16 RankCount <name="Rank count">;
+  FollowerRank Ranks[RankCount];
+} FollowerRankUps <optimize=false, read=Str("%s", EnumToString(Follower))>;
+
+char Name[8];
+u32 EntryCount <name="Entry count">;
+FSkip(4);
+FollowerRankUps FollowerRanks[EntryCount]<name="Follower ranks">;

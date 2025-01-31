@@ -5,17 +5,17 @@
 #include "metaphor_structs.h"
 #include "metaphor_enums.bt"
 
-typedef struct
+typedef struct (short index)
 {
   SetRandomBackColor();
   
-  CasterEffect CasterEff <name="Caster Effect">;
-  SkillUseConditions Usable_In;
-  PhysOrMagType Phys_Or_Mag;
-  u8 Range;
+  SkillNormalFlags Flags;
+  SkillUseConditions Usable_In <name="Usable in">;
+  SkillScalingType Phys_Or_Mag <name="Scaling Type">;
+  SkillRangeType Range;
   CostTypeEnum Cost_Type<name="Cost Type">;
-  u16 HP_Percent_Cost<name="% HP Cost">;
-  u16 MP_Cost<name="MP Cost">;
+  u16 SkillPercentCost <name="% Cost">;
+  u16 SkillValueCost <name="Value Cost">;
   u16 Field0A;
   TargetCount Target_Count<name="Target Count">;
   TargetSide Target_Side<name="Target Side">;
@@ -26,15 +26,15 @@ typedef struct
   u8 Field12;
   u8 Field13;
   u8 Accuracy;
-  u8 Min_Hit_Count;
-  u8 Max_Hit_Count;
-  DamageType HP_Damage_Type;
-  u16 SkillPower;
-  DamageType MP_Damage_Type;
+  u8 Min_Hit_Count <name="Min Hit Count">;
+  u8 Max_Hit_Count <name="Max Hit Count">;
+  DamageType HP_Damage_Type <name="HP Effect">;
+  u16 SkillPower <name="HP Effect Value">;
+  DamageType MP_Damage_Type <name="MP Effect">;
   u8 Field1A;
-  u8 MPDrainPower <name="MP Power">;
+  u8 MPDrainPower <name="MP Effect Value">;
   u8 Field1C;
-  ApplyOrCure Apply_Cure;
+  ApplyOrCure Apply_Cure <name="Apply/Cure Ailment">;
   u8 ProbabilityApplyCure<name="% of Chance to Apply/Cure">;
   struct
         {
@@ -82,15 +82,23 @@ typedef struct
 	} AilmentEffectss4 <name = "Ailments 4">;
   BuffDebuffEffectType OneTime <name="Buff or Debuff Application">;
   u16 Field26;
+  u8 BuffStages <name="Buff Stages">;
   SpecialEffectType SpecialEffect <name="Special Effect">;
   u16 CriticalChance <name="Critical Chance">;
   u16 Field2C;
   u16 Field2E;
-} SkillNormalTBL <optimize=false, read=Str( "%02d %04d", MP_Cost, Accuracy )>; // size=0x30, 
+
+  local SkillID skillId = index;
+} SkillNormalTBL <optimize=false, read=Str("%s", EnumToString(skillId))>; // size=0x30, 
+
 
 typedef struct
 {
-  SkillNormalTBL entries[ FileSize() / 0x30 ];
+  local short i;
+  for(i = 0; i < FileSize() / 0x30; i++) {
+    //FollowerStruct Followers(i) <name="Follower data">;
+    SkillNormalTBL Entries(i);
+  }
 } Bin <optimize=false>;
 
 Bin bin;

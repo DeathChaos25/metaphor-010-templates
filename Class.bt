@@ -10,7 +10,7 @@ typedef struct
 {
   SetRandomBackColor();
   u16 Unknown;
-  u8 ClassType <name="Class Type">;
+  ArchetypeLineageByte Lineage <name="Lineage">;
   u8 Unknown;
   ClassRarity RarityClass <name="Rarity">;
   u16 Unknown;
@@ -25,7 +25,7 @@ typedef struct
   u16 Unknown;
   u16 Unknown;
   u16 Unknown;
-  u16 Unknown;
+  u16 ModelId <name="Model ID">;
   u16 Unknown;
   u16 Unknown;
   u16 Unknown;

@@ -1,0 +1,24 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+#include "metaphor_enums.bt"
+
+typedef struct (short index)
+{
+  short Unknown;
+  ArchetypeLineage Lineage <name="Related lineage">;
+  short Unknown2[13];
+
+  local FollowerID follower = index;
+} FollowerStruct <optimize=false, read=Str("%s", EnumToString(follower))>;
+
+char Name[8];
+u32 EntryCount <name="Entry count">;
+FSkip(4);
+
+local short i;
+for(i = 0; i < EntryCount; i++) {
+  FollowerStruct Followers(i) <name="Follower data">;
+}
