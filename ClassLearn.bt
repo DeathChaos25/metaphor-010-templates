@@ -1,0 +1,19 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+#include "metaphor_enums.bt"
+
+char Name[8];
+u32 EntryCount <name="Entry count">;
+FSkip(4);
+
+typedef struct
+{
+  ArchetypeClassID LearnedArchetype1 <name="Learned archetype 1">;
+  ArchetypeClassID LearnedArchetype2 <name="Learned archetype 2">;
+  int Unknown;
+} PairedArchetypeLearn <optimize=false, read=Str("%s and %s", EnumToString(LearnedArchetype1), EnumToString(LearnedArchetype2))>;
+
+PairedArchetypeLearn PairedLearnedArchetypes[2] <name="Paired learned archetypes">;

@@ -9,14 +9,14 @@
 
 typedef struct (short index)
 {
-  short Unknown;
-  short Unknown;
+  short NameMsgId <name="Name msg ID", comment="The ability's name will be this id taken from Ability_Message_1.msg">;
+  short DescriptionMsgId <name="Description msg ID", comment="The ability's description will be this id taken from Ability_Message_2.msg">;
   FollowerID Follower;
   short Unknown;
   short Unknown;
   ArchetypeClassID UnlockedArchetype <name="Unlocked archetype">;
   FollowerAbilityEffectType FollowerEffectType <name="Ability type">;
-  FollowerAbilityEffectSubtype FollowerEffectSubtype;
+  FollowerAbilityEffectSubtype FollowerEffectSubtype <name="Ability subtype">;
   short Unknown;
   short Unknown;
   short Unknown;

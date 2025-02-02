@@ -263,6 +263,7 @@ enum<ushort> CharacterID
 	Eupha = 6,
 	Fidelio = 7,
 	Basilio = 8,
+    Grius = 10
 };
 
 enum<short> ItemType

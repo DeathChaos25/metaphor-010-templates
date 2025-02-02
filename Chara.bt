@@ -3,8 +3,9 @@
 //---------------------------------------------
 #include "common/include.h"
 #include "metaphor_structs.h"
+#include "metaphor_enums.bt"
 
-typedef struct
+typedef struct (ushort index)
 {
   SetRandomBackColor();
   
@@ -14,15 +15,20 @@ typedef struct
   u16 Field06;
   u16 Field08;
   u16 Field0A;
-  u16 Field0E;
+  ArchetypeClassID StartingArchetype <name="Starting archetype">;
   u32 Field10;
   u32 Field14;
-  u16 Field18;
-} Allied <optimize=false, read=Str( "%02d %02d %04d", Field00, Field02, char_id )>; // size=0x34, 
+  u16 StartingArchetypeLevel <name="Starting archetype level">;
+
+  local CharacterID character = index;
+} Allied <optimize=false, read=Str("%s", EnumToString(character))>; // size=0x34, 
 
 typedef struct
 {
-  Allied entries[ FileSize() / 0x1A ];
+  local ushort i;
+  for(i = 0; i < FileSize() / 0x1A; i++) {
+    Allied Entries(i) <name="Party member data">;
+  }
 } Bin <optimize=false>;
 
 Bin bin;
