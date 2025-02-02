@@ -263,6 +263,7 @@ enum<ushort> CharacterID
 	Eupha = 6,
 	Fidelio = 7,
 	Basilio = 8,
+    Grius = 10
 };
 
 enum<short> ItemType
@@ -4501,4 +4502,63 @@ enum<short> FollowerAbility
     Archetype_Evangelist = 359,
 
     Prince_Archetype = 409
+};
+
+enum<short> FollowerAbilityEffectType
+{
+	UnlockArchetype = 1,
+    Progression = 2,
+    InBattleEffect = 3,
+    DungeonCrawling = 5,
+    DailyLife = 6,
+};
+
+enum<short> FollowerAbilityEffectSubtype
+{
+	UnlockTier1Archetype = 1,
+    UnlockTier2Archetype = 2,
+    UnlockTier3Archetype = 3,
+    ArchetypeMagCostReduction1 = 4,
+    ArchetypeMagCostReduction2 = 5,
+    ReserveExpLossReduction = 6,
+    ReserveExpLossRemoval = 7,
+    TreasureChestLocationInDungeons = 9,
+    IncreasedExpGained1 = 10,
+    IncreasedExpGained2 = 11,
+    ArchetypeStatsUp = 12,
+    HeismayAmbushDamageUp = 13,
+    EnemyAnalysisDetail = 16,
+    StrohlHumanCrit1 = 18,
+    StrohlHumanCrit2 = 19,
+    HulkenbergWeaknessGuard1 = 20,
+    HulkenbergWeaknessGuard2 = 21,
+    AnxietyChanceDown1 = 22,
+    AnxietyChanceDown2 = 23,
+    BasilioMonsterEvasion1 = 24,
+    BasilioMonsterEvasion2 = 25,
+    GauntletRunnerDeckOpener1 = 26,
+    GauntletRunnerDeckOpener2 = 27,
+    EscapeFromBattleChanceUp = 28,
+    EscapeFromBattleGuaranteed = 29,
+    CharacterSwitchingCostDecrease = 30,
+    SpecialPartyBuffInBattle = 32,
+    CatherinaAttaburyDungeonOpener = 33,
+    ImprovedFaeSight = 40,
+    ItemLocationInDungeons = 41,
+    StrongEnemyLocationInDungeons = 44,
+    PostBattleMPRestoration1 = 45,
+    PostBattleMPRestoration2 = 46,
+    FollowerEventReminder = 48,
+    ArchetypeExtraInheritSlot1 = 51,
+    ArchetypeExtraInheritSlot2 = 52,
+    ArchetypeExtraInheritSlot3 = 53,
+    MagExchangeRateUp1 = 54,
+    MagExchangeRateUp2 = 55,
+    FollowerAbilityPreview = 56,
+    UnlockTier4Archetype = 57,
+    UnlockMenu = 58,
+    ImprovedMenu = 59,
+    ShopDiscount = 60,
+    QuestRewardUp = 61,
+    StartOfDayDelivery = 62
 };

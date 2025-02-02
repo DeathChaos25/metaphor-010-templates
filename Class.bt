@@ -5,11 +5,11 @@
 #include "metaphor_structs.h"
 #include "metaphor_enums.bt"
 
-
 typedef struct
 {
   SetRandomBackColor();
-  u16 Unknown;
+  bool ArchetypeIsUnobtainable <name="Archetype is unobtainable", comment="Set to 1 only on archetypes that cannot be acquired in the game">;
+  u8 Unknown;
   ArchetypeLineageByte Lineage <name="Lineage">;
   u8 Unknown;
   ClassRarity RarityClass <name="Rarity">;
@@ -30,8 +30,7 @@ typedef struct
   u16 Unknown;
   u16 Unknown;
   u16 Unknown;
-  u16 Unknown;
-  u16 Unknown;
+  ArchetypeAvailabilityPerPartyMember AvailabilityPerPartyMember <name="Availability per party member">;
   byte MsgHash1[0x10];
   byte MsgHash2[0x10];
   byte MsgHash3[0x10];

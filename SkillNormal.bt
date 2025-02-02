@@ -16,7 +16,7 @@ typedef struct (short index)
   CostTypeEnum Cost_Type<name="Cost Type">;
   u16 SkillPercentCost <name="% Cost">;
   u16 SkillValueCost <name="Value Cost">;
-  u16 Field0A;
+  u16 TurnIconCost <name="Turn Icon Cost">;
   TargetCount Target_Count<name="Target Count">;
   TargetSide Target_Side<name="Target Side">;
   TargetCondition Target_Condition<name="Target Condition">;

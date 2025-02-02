@@ -1,0 +1,35 @@
+//---------------------------------------------
+// Includes
+//---------------------------------------------
+#include "common/include.h"
+#include "metaphor_structs.h"
+#include "metaphor_enums.bt"
+
+// Appropriated from https://docs.google.com/spreadsheets/d/1FDC6T6tr__-AU18tY--4-ZUSzkeaMM_Kg_Crqu6VrcM/edit?gid=453521762#gid=453521762
+
+typedef struct (short index)
+{
+  short NameMsgId <name="Name msg ID", comment="The ability's name will be this id taken from Ability_Message_1.msg">;
+  short DescriptionMsgId <name="Description msg ID", comment="The ability's description will be this id taken from Ability_Message_2.msg">;
+  FollowerID Follower;
+  short Unknown;
+  short Unknown;
+  ArchetypeClassID UnlockedArchetype <name="Unlocked archetype">;
+  FollowerAbilityEffectType FollowerEffectType <name="Ability type">;
+  FollowerAbilityEffectSubtype FollowerEffectSubtype <name="Ability subtype">;
+  short Unknown;
+  short Unknown;
+  short Unknown;
+  short Unknown;
+
+  local FollowerAbility ability = index;
+} AbilityTable <optimize=false, read=Str("%s - %s", EnumToString(ability), EnumToString(FollowerEffectSubtype))>;
+
+char Name[8];
+u32 EntryCount <name="Entry count">;
+FSkip(4);
+
+local short i;
+for(i = 0; i < EntryCount; i++) {
+  AbilityTable FollowerAbilityTable(i) <name="Follower abilities">;
+}

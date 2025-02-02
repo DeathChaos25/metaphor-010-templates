@@ -167,3 +167,39 @@ typedef struct
   f32 X;
   f32 Y;
 } Vec2<read=Str("%f - %f", X, Y)>;
+
+typedef struct
+{
+    bool : 1;
+    bool AvailableToPartyMember1 : 1 <name = "Archetype available to Protagonist">;
+    bool AvailableToPartyMember2 : 1 <name = "Archetype available to Sthorl">;
+    bool AvailableToPartyMember3 : 1 <name = "Archetype available to Hulkenberg">;
+    bool AvailableToPartyMember4 : 1 <name = "Archetype available to Heismay">;
+    bool AvailableToPartyMember5 : 1 <name = "Archetype available to Junah">;
+    bool AvailableToPartyMember6 : 1 <name = "Archetype available to Eupha">;
+    bool AvailableToPartyMember7 : 1 <name = "Archetype available to party member 7">;
+    bool AvailableToPartyMember8 : 1 <name = "Archetype available to Basilio">;
+    bool AvailableToPartyMember9 : 1 <name = "Archetype available to party member 9">;
+    bool AvailableToPartyMember10 : 1 <name = "Archetype available to Grius">;
+    bool AvailableToPartyMember11 : 1  <name = "Archetype available to party member 11">;
+    bool AvailableToPartyMember12 : 1  <name = "Archetype available to party member 12">;
+    bool AvailableToPartyMember13 : 1  <name = "Archetype available to party member 13">;
+    bool AvailableToPartyMember14 : 1  <name = "Archetype available to party member 14">;
+    bool AvailableToPartyMember15 : 1  <name = "Archetype available to party member 15">;
+    bool AvailableToPartyMember16 : 1  <name = "Archetype available to party member 16">;
+    bool AvailableToPartyMember17 : 1  <name = "Archetype available to party member 17">;
+    bool AvailableToPartyMember18 : 1  <name = "Archetype available to party member 18">;
+    bool AvailableToPartyMember19 : 1  <name = "Archetype available to party member 19">;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+} ArchetypeAvailabilityPerPartyMember;

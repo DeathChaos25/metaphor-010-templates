@@ -5,30 +5,45 @@
 #include "metaphor_structs.h"
 #include "metaphor_enums.bt"
 
-FSeek (0xB404);
 typedef struct
 {
-  ArchetypeClassID ArchetypeClass <name="Archetype Class">;
+  ArchetypeClassID ArchetypeTreeLevel <name="Archetype Class">;
   u16 ArchetypeRank <name="Archetype Rank">;
   u16 EXPRequired <name="EXP Required">;
   u16 field06;
-  u16 field08;
-  u16 field0A;
-  u16 field0C;
-  u16 field0E;
-  u16 field10;
-} collection;
+  u16 GrowthSTR <name="Strength Increase">;
+  u16 GrowthMA <name="Magic Increase">;
+  u16 GrowthEN <name="Endurance Increase">;
+  u16 GrowthAGI <name="Agility Increase">;
+  u16 GrowthLUK <name="Luck Increase">;
+} collection <optimize=false, read=Str("+%d STR    +%d MA    +%d EN    +%d AGI    +%d LUK", GrowthSTR, GrowthMA, GrowthEN, GrowthAGI, GrowthLUK)>;
 
 typedef struct
 {
   SetRandomBackColor();
   collection ArchetypeTreeLevel[30];
-} GrowthCL <size=0x21C, optimize=false>;
+
+  local ushort strSum = 0;
+  local ushort maSum = 0;
+  local ushort enSum = 0;
+  local ushort agiSum = 0;
+  local ushort lukSum = 0;
+
+  local uint i = 0;
+  for ( i = 0; i < 30; i++ )
+  {
+    strSum += ArchetypeTreeLevel[i].GrowthSTR;
+    maSum += ArchetypeTreeLevel[i].GrowthMA;
+    enSum += ArchetypeTreeLevel[i].GrowthEN;
+    agiSum += ArchetypeTreeLevel[i].GrowthAGI;
+    lukSum += ArchetypeTreeLevel[i].GrowthLUK;
+  }
+} GrowthCL <optimize=false, read=Str("%s    +%d STR    +%d MA    +%d EN    +%d AGI    +%d LUK", EnumToString(ArchetypeTreeLevel[0].ArchetypeTreeLevel), strSum, maSum, enSum, agiSum, lukSum)>;
 
 SetBackColor( 0x880000 );
 
-local uint i = 0;
-for ( i = 0; i < ( 25920 ) / 0x21C; i++ )
-{
-  GrowthCL GrowthClass;
-}
+ushort PointerSegmentSize;
+ushort ValueCount;
+FSeek(PointerSegmentSize * 2);
+
+GrowthCL GrowthClass[(FileSize() - PointerSegmentSize * 2) / 0x21C] <name="Archetype growth">;
